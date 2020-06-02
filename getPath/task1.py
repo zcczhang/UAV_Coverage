@@ -2,7 +2,7 @@ from math import sqrt, floor
 from csv import writer
 
 # get two points in the diagonal
-topLeft, bottomRight = (44.924480, -93.161307), (44.923933, -93.159719)
+topLeft, bottomRight = (44.937541, -93.168826), (44.936920, -93.168255)
 
 top = topLeft[0]
 left = topLeft[1]
@@ -16,11 +16,11 @@ with open('box.csv', 'w', newline='') as f:
     w.writerows(box)
 
 # read x, y in Flylitchi
-x = 125.2
-y = 60.9
+x = 45
+y = 69.1
 
 # set the radius
-r = 7
+r = 5
 
 long_per_meter = (right-left)/x
 lat_per_meter = (top-bottom)/y
@@ -54,7 +54,7 @@ def get_path(top, bottom, left, x, r):
         else:
             temp = []
             x2 = top-hex_h*lat_per_meter
-            while (x2-dx-hex_h*lat_per_meter) > bottom:
+            while (x2-hex_h*lat_per_meter) > bottom:
                 x2 -= dx
                 temp.append((x2, y1))
             temp.reverse()
