@@ -20,7 +20,7 @@ x = 125.2
 y = 60.9
 
 # set the radius
-r = 10
+r = 7
 
 long_per_meter = (right-left)/x
 lat_per_meter = (top-bottom)/y
@@ -47,7 +47,7 @@ def get_path(top, bottom, left, x, r):
     x2 = x1
     while y1 > left:
         if s == -1:
-            while (x2-dx-hex_h*lat_per_meter) > bottom:
+            while (x2-hex_h*lat_per_meter) > bottom:
                 x2 -= dx
                 path.append((x2, y1))
             x2 = x1

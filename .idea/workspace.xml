@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6695a53a-2cd8-459d-8415-3a2ceac3f83c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Code_foder/.idea/Code_foder.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code_foder/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code_foder/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code_foder/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code_foder/Task1/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/getPath/coord.csv" beforeDir="false" afterPath="$PROJECT_DIR$/getPath/coord.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/getPath/task1.py" beforeDir="false" afterPath="$PROJECT_DIR$/getPath/task1.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/getPath/task1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+            <state relative-caret-position="-356">
+              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -81,6 +78,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -118,7 +116,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="task1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="task1" type="PythonConfigurationType" factoryName="Python">
       <module name="UAV_Coverage" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -140,14 +138,9 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.UAV_Coverage" />
       <item itemvalue="Python.task1" />
+      <item itemvalue="Python.UAV_Coverage" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.task1" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -175,7 +168,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32941177" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.04278075" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -188,8 +181,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/getPath/task1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+        <state relative-caret-position="-356">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
