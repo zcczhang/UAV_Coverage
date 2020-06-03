@@ -28,11 +28,12 @@ lat_per_meter = (top-bottom)/y
 
 def get_path(top, bottom, left, x, r):
     origin = (top, left)
-    path = [origin]
-    dy = 3/2*r*long_per_meter
-    hex_h = sqrt(3) / 2 * r
-    x1 = origin[0] - hex_h * lat_per_meter
+    path = [origin]             # list of tuples which stored coordinates
+    dy = 3/2*r*long_per_meter   # interval between two points in y in longitude
+    hex_h = sqrt(3) / 2 * r     # height of the hexagon
+    x1 = origin[0] - hex_h * lat_per_meter      # now is the second point
     y1 = origin[1] + r/2 * long_per_meter
+    # get the first two rows
     for i in range(floor((x - r / 2) / (dy/long_per_meter))):
         path.append((x1, y1))
         y1 += dy
@@ -41,17 +42,20 @@ def get_path(top, bottom, left, x, r):
         else:
             x1 = origin[0] - hex_h * lat_per_meter
     path.append((x1, y1))
-
-    dx = 2 * hex_h * lat_per_meter
-    s = -1
+    # get the rest of the path
+    dx = 2 * hex_h * lat_per_meter      # interval between two points in x in latitude
+    s = -1      # a parameter to see if
     x2 = x1
+    # from the right to left
     while y1 > left:
         if s == -1:
+            # from the top to bottom
             while (x2-hex_h*lat_per_meter) > bottom:
                 x2 -= dx
                 path.append((x2, y1))
             x2 = x1
         else:
+            # from the bottom to top
             temp = []
             x2 = top-hex_h*lat_per_meter
             while (x2-hex_h*lat_per_meter) > bottom:
@@ -62,7 +66,7 @@ def get_path(top, bottom, left, x, r):
             x2 = x1
         s *= -1
         y1 -= dy
-
+    # finish the path and get back
     path.append(origin)
     return path
 
