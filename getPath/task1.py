@@ -66,7 +66,7 @@ def get_path(top, bottom, left, x, r):
             x2 = x1
         s *= -1
         y1 -= dy
-    # finish the path and get back
+    # finish the path and get back to the origin
     path.append(origin)
     return path
 
