@@ -35,7 +35,7 @@ while y1 + dy + r / 2 * lon_per_meter <= right:
     x1 = top - (.5 + .5 * i) * hex_h * lat_per_meter  # (.5+.5*i)=0/1: for columns with more/less hexagons
     i *= -1
 
-# get the rest of the path
+# get the rest of the HC path
 k = 1
 while y1 > left:
     temp = []
