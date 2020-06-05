@@ -4,10 +4,8 @@ from csv import writer
 """
 :input data
 """
-# get two points in the diagonal
-top_left, bottom_right = (44.937541, -93.168826), (44.936920, -93.168255)
-# set the radius
-r = 5
+top_left, bottom_right = (44.937541, -93.168826), (44.936920, -93.168255)   # diagonal points
+r = 6       # set the radius
 """
 :parameters
 """
@@ -23,7 +21,6 @@ dx = 2 * hex_h * lat_per_meter  # interval between two points in latitude
 dy = 3 / 2 * r * lon_per_meter  # interval between two points in longitude
 x1 = top - hex_h * lat_per_meter  # now is the second point
 y1 = left + r / 2 * lon_per_meter
-
 """
 :create path
 """
@@ -34,7 +31,6 @@ while y1 + dy + r / 2 * lon_per_meter <= right:
     y1 += dy
     x1 = top - (.5 + .5 * i) * hex_h * lat_per_meter  # (.5+.5*i)=0/1: for columns with more/less hexagons
     i *= -1
-
 # get the rest of the path
 k = 1
 while y1 > left:
@@ -49,8 +45,9 @@ while y1 > left:
     k *= -1
     y1 -= dy
 path.append((top, left))
-
-
+"""
+:save coordinates
+"""
 with open('coord.csv', 'w', newline='') as f:
     w = writer(f)
     w.writerows(path)
