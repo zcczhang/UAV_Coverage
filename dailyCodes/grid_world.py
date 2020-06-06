@@ -92,7 +92,6 @@ class GridWorldEnv(gym.Env):
                                 default_reward=self.default_reward)
         self.reward = 0  # for rendering
         self.action = None  # for rendering
-
         # 0,1,2,3,4 represent left, right, up, down, -, five moves.
         self.action_space = spaces.Discrete(4)
         self.observation_space = spaces.Discrete(self.n_height * self.n_width)
