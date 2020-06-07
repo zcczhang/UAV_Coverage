@@ -9,6 +9,7 @@ __time__ = "2020-06-05 16:38"
 import gym
 from gym import spaces
 
+
 class Grid(object):
     def __init__(self, x: int = None,
                  y: int = None,
