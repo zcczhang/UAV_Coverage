@@ -153,7 +153,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.task1">
+  <component name="RunManager" selected="Python.grid_world">
     <configuration name="UAV_Coverage" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="UAV_Coverage" />
       <option name="INTERPRETER_OPTIONS" value="" />
