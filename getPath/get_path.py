@@ -1,9 +1,12 @@
+"""
+__author__ = "Charles Zhang"
+__time__ = "2020-06-04 19:53"
+"""
+
 from math import *
 from numpy import *
 from csv import writer
 
-__author__ = "Charles Zhang"
-__time__ = "2020-06-04 19:53"
 
 # (44.937541, -93.168826), (44.936920, -93.168255)
 
