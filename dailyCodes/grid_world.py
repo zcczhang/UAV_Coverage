@@ -4,8 +4,7 @@ __time__ = "2020-06-05 16:38"
 """
 # references:
 # https://cs.stanford.edu/people/karpathy/reinforcejs/gridworld_dp.html
-# https://github.com/qqiang00/ReinforcemengLearningPractice/blob/master/reinforce/codes_for_book/c06/gridworld.py
-
+# https://github.com/qqiang00/ReinforcemengLearningPractice
 
 import gym
 from gym import spaces
