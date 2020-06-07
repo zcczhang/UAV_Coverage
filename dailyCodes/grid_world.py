@@ -70,10 +70,6 @@ class GridMatrix(object):
 
 
 class GridWorldEnv(gym.Env):
-    metadata = {
-        'render.modes': ['human', 'rgb_array'],
-        'video.frames_per_second': 30
-    }
 
     def __init__(self, n_width: int = 10,
                  n_height: int = 10,
@@ -101,7 +97,8 @@ class GridWorldEnv(gym.Env):
         self.viewer = None
         self.reset()
 
-    def _action_effect(self, x, y, action):
+    @staticmethod
+    def _action_effect(x, y, action):
         new_x, new_y = x, y
         if action == 0:
             new_x -= 1  # left
