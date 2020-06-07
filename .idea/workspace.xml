@@ -31,13 +31,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dailyCodes/grid_world.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2232">
               <caret line="93" column="43" selection-start-line="93" selection-start-column="43" selection-end-line="93" selection-end-column="43" />
               <folding>
                 <element signature="e#70#80#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../UAV-Summer-Research-2020/grid_world.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
+              <folding>
+                <element signature="e#269#279#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,6 +113,7 @@
         <option value="$PROJECT_DIR$/dailyCodes/Grid World/GridWorldEnv.py" />
         <option value="$PROJECT_DIR$/dailyCodes/GridWorld/GridWorldEnv.py" />
         <option value="$PROJECT_DIR$/dailyCodes/grid_world.py" />
+        <option value="$PROJECT_DIR$/../UAV-Summer-Research-2020/grid_world.py" />
       </list>
     </option>
   </component>
@@ -700,6 +713,16 @@
           <caret line="93" column="43" selection-start-line="93" selection-start-column="43" selection-end-line="93" selection-end-column="43" />
           <folding>
             <element signature="e#70#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../UAV-Summer-Research-2020/grid_world.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
+          <folding>
+            <element signature="e#269#279#0" expanded="true" />
           </folding>
         </state>
       </provider>
