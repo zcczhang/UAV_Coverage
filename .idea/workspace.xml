@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6695a53a-2cd8-459d-8415-3a2ceac3f83c" name="Default Changelist" comment="" />
+    <list default="true" id="6695a53a-2cd8-459d-8415-3a2ceac3f83c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/getPath/coord.csv" beforeDir="false" afterPath="$PROJECT_DIR$/getPath/coord.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/getPath/get_path.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pictures/pictures.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/pictures/pictures.pptx" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +17,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dailyCodes/grid_world.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+            <state relative-caret-position="672">
+              <caret line="28" column="44" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
               <folding>
                 <element signature="e#70#80#0" expanded="true" />
               </folding>
@@ -23,10 +27,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/getPath/get_path.py">
+        <entry file="file://$PROJECT_DIR$/getPath/get_path_v1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1008">
-              <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+            <state relative-caret-position="454">
+              <caret line="55" column="11" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
+              <folding>
+                <element signature="e#68#87#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -78,15 +85,17 @@
         <option value="$PROJECT_DIR$/dailyCodes/Grid World/GridWorldEnv.py" />
         <option value="$PROJECT_DIR$/dailyCodes/GridWorld/GridWorldEnv.py" />
         <option value="$PROJECT_DIR$/../UAV-Summer-Research-2020/grid_world.py" />
-        <option value="$PROJECT_DIR$/getPath/get_path.py" />
         <option value="$PROJECT_DIR$/getPath/task1.py" />
         <option value="$PROJECT_DIR$/dailyCodes/grid_world.py" />
+        <option value="$PROJECT_DIR$/getPath/get_path.py" />
+        <option value="$PROJECT_DIR$/getPath/get_path_v1.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="583" />
     <option name="y" value="23" />
-    <option name="width" value="995" />
+    <option name="width" value="1097" />
     <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -140,7 +149,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.grid_world">
+  <component name="RunManager" selected="Python.get_path_v1">
     <configuration name="UAV_Coverage" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="UAV_Coverage" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -225,6 +234,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="get_path_v1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="UAV_Coverage" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/getPath" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/getPath/get_path_v1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="grid_world" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="UAV_Coverage" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -259,27 +289,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dailyCodes/gridworld.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="gridworld_env (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="UAV_Coverage" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/.local/lib/python3.6/site-packages/gym_gridworlds/envs" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/.local/lib/python3.6/site-packages/gym_gridworlds/envs/gridworld_env.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -358,18 +367,18 @@
       <item itemvalue="Python.getPath" />
       <item itemvalue="Python.task1 (1)" />
       <item itemvalue="Python.gridworld (1)" />
-      <item itemvalue="Python.gridworld_env (1)" />
       <item itemvalue="Python.monitor" />
       <item itemvalue="Python.grid_world" />
       <item itemvalue="Python.__init__ (1)" />
+      <item itemvalue="Python.get_path_v1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.get_path_v1" />
         <item itemvalue="Python.grid_world" />
         <item itemvalue="Python.__init__ (1)" />
         <item itemvalue="Python.gridworld (1)" />
         <item itemvalue="Python.monitor" />
-        <item itemvalue="Python.gridworld_env (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -388,13 +397,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13562387" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20494273" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.19465241" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.19465241" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -663,16 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dailyCodes/grid_world.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-          <folding>
-            <element signature="e#70#80#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/getPath/get_path.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-172">
@@ -682,8 +682,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/getPath/get_path.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+        <state relative-caret-position="370">
+          <caret line="69" selection-start-line="69" selection-end-line="70" />
+          <folding>
+            <element signature="e#68#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dailyCodes/grid_world.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="28" column="44" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
+          <folding>
+            <element signature="e#70#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getPath/get_path_v1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="55" column="11" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
+          <folding>
+            <element signature="e#68#87#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
