@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6695a53a-2cd8-459d-8415-3a2ceac3f83c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dailyCodes/tic-tac-toe_reference.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dailyCodes/tic_tac_toe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6695a53a-2cd8-459d-8415-3a2ceac3f83c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +14,7 @@
         <entry file="file://$PROJECT_DIR$/dailyCodes/grid_world.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="167">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="e#70#80#0" expanded="true" />
               </folding>
@@ -34,35 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/getPath/get_path_v1.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="742">
               <caret line="72" selection-start-line="72" selection-end-line="72" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dailyCodes/tic-tac-toe_reference.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="204" column="8" selection-start-line="204" selection-start-column="8" selection-end-line="204" selection-end-column="8" />
-              <folding>
-                <element signature="e#60#78#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dailyCodes/tic_tac_toe.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="101" column="42" selection-start-line="101" selection-start-column="42" selection-end-line="101" selection-end-column="42" />
-              <folding>
-                <element signature="e#1#19#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -153,6 +124,12 @@
               <item name="UAV_Coverage" type="b2602c69:ProjectViewProjectNode" />
               <item name="UAV_Coverage" type="462c0819:PsiDirectoryNode" />
               <item name="dailyCodes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UAV_Coverage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UAV_Coverage" type="462c0819:PsiDirectoryNode" />
+              <item name="dailyCodes" type="462c0819:PsiDirectoryNode" />
+              <item name="Tic-Tac-Toe" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="UAV_Coverage" type="b2602c69:ProjectViewProjectNode" />
@@ -750,7 +727,7 @@
     <entry file="file://$PROJECT_DIR$/dailyCodes/grid_world.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="e#70#80#0" expanded="true" />
           </folding>
@@ -760,13 +737,6 @@
     <entry file="file://$PROJECT_DIR$/getPath/get_path_v0.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-624" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/getPath/get_path_v1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="742">
-          <caret line="72" selection-start-line="72" selection-end-line="72" selection-end-column="45" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dailyCodes/tic_tac_toe.py">
@@ -781,11 +751,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dailyCodes/tic-tac-toe_reference.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="204" column="8" selection-start-line="204" selection-start-column="8" selection-end-line="204" selection-end-column="8" />
+        <state relative-caret-position="699">
+          <caret line="223" column="25" lean-forward="true" selection-start-line="223" selection-start-column="25" selection-end-line="223" selection-end-column="25" />
           <folding>
             <element signature="e#60#78#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dailyCodes/.ipynb_checkpoints/Tic-Tac-Toe-checkpoint.ipynb">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getPath/get_path_v1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="742">
+          <caret line="72" selection-start-line="72" selection-end-line="72" selection-end-column="45" />
         </state>
       </provider>
     </entry>
