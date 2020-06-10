@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6695a53a-2cd8-459d-8415-3a2ceac3f83c" name="Default Changelist" comment="" />
+    <list default="true" id="6695a53a-2cd8-459d-8415-3a2ceac3f83c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Daily_Codes/Grid World/.ipynb_checkpoints/Grid_World-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Daily_Codes/Grid World/.ipynb_checkpoints/Grid_World-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily_Codes/Grid World/Grid_World.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Daily_Codes/Grid World/Grid_World.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pictures/pictures.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/pictures/pictures.pptx" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,7 +13,26 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Daily_Codes/Grid World/Grid_World.ipynb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="284">
+              <caret line="233" column="51" selection-start-line="233" selection-start-column="51" selection-end-line="233" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Daily_Codes/Grid World/grid_world_simulation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="56" selection-start-line="56" selection-end-line="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -70,6 +93,7 @@
         <option value="$PROJECT_DIR$/dailyCodes/1.py" />
         <option value="$PROJECT_DIR$/dailyCodes/Grid World/grid_world.py" />
         <option value="$PROJECT_DIR$/dailyCodes/Grid World/1.py" />
+        <option value="$PROJECT_DIR$/Daily_Codes/Grid World/grid_world_simulation.py" />
       </list>
     </option>
   </component>
@@ -96,24 +120,13 @@
             <path>
               <item name="UAV_Coverage" type="b2602c69:ProjectViewProjectNode" />
               <item name="UAV_Coverage" type="462c0819:PsiDirectoryNode" />
-              <item name="dailyCodes" type="462c0819:PsiDirectoryNode" />
+              <item name="Daily_Codes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="UAV_Coverage" type="b2602c69:ProjectViewProjectNode" />
               <item name="UAV_Coverage" type="462c0819:PsiDirectoryNode" />
-              <item name="dailyCodes" type="462c0819:PsiDirectoryNode" />
+              <item name="Daily_Codes" type="462c0819:PsiDirectoryNode" />
               <item name="Grid World" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UAV_Coverage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UAV_Coverage" type="462c0819:PsiDirectoryNode" />
-              <item name="dailyCodes" type="462c0819:PsiDirectoryNode" />
-              <item name="Tic-Tac-Toe" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UAV_Coverage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UAV_Coverage" type="462c0819:PsiDirectoryNode" />
-              <item name="getPath" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -141,7 +154,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.1">
+  <component name="RunManager" selected="Python.grid_world_simulation">
     <configuration name="1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="UAV_Coverage" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -289,6 +302,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="grid_world_simulation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="UAV_Coverage" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Daily_Codes/Grid World" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Daily_Codes/Grid World/grid_world_simulation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="task1 (1)" type="PythonConfigurationType" factoryName="Python">
       <module name="UAV_Coverage" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -331,27 +365,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tic_tac_toe" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="UAV_Coverage" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dailyCodes" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dailyCodes/tic_tac_toe.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.__init__" />
       <item itemvalue="Python.task1" />
@@ -360,17 +373,17 @@
       <item itemvalue="Python.task1 (1)" />
       <item itemvalue="Python.grid_world" />
       <item itemvalue="Python.grid_world solution" />
-      <item itemvalue="Python.tic_tac_toe" />
       <item itemvalue="Python.grid_world (1)" />
       <item itemvalue="Python.1" />
+      <item itemvalue="Python.grid_world_simulation" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.grid_world_simulation" />
         <item itemvalue="Python.1" />
         <item itemvalue="Python.grid_world (1)" />
         <item itemvalue="Python.grid_world" />
         <item itemvalue="Python.grid_world solution" />
-        <item itemvalue="Python.tic_tac_toe" />
       </list>
     </recent_temporary>
   </component>
@@ -389,6 +402,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13441832" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -410,8 +424,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/getPath/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/dailyCodes/Day1getPath/get_path.py" />
     <entry file="file://$PROJECT_DIR$/dailyCodes/simple model of RL.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -605,13 +617,6 @@
     <entry file="file://$PROJECT_DIR$/dailyCodes/Grid World/Grid_World.ipynb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/getPath/get_path_v1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="70" column="24" lean-forward="true" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/getPath/get_path_v0.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-508" />
@@ -640,6 +645,27 @@
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getPath/get_path_v1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="70" column="24" lean-forward="true" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Daily_Codes/Grid World/Grid_World.ipynb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="233" column="51" selection-start-line="233" selection-start-column="51" selection-end-line="233" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Daily_Codes/Grid World/grid_world_simulation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="56" selection-start-line="56" selection-end-line="57" />
         </state>
       </provider>
     </entry>
