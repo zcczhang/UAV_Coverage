@@ -4,4 +4,4 @@
 	- Wrapper
 	- Monitor
 - [Tic Tac Toe](https://github.com/zcczhang/UAV_Coverage/blob/master/Daily_Codes/Tic-Tac-Toe/Tic-Tac-Toe.ipynb)
-- [Grid World](https://github.com/zcczhang/UAV_Coverage/blob/master/Daily_Codes/Grid%20World/Grid_World.ipynb) (shortest path to find the exit)
+- [Grid World](https://github.com/zcczhang/UAV_Coverage/blob/master/Daily_Codes/Grid%20World/Grid_World_v2.ipynb) (shortest path to find the exit)
