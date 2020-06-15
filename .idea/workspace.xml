@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6695a53a-2cd8-459d-8415-3a2ceac3f83c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pictures/pictures.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/pictures/pictures.pptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pictures/~$pictures.pptx" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../UAV-Summer-Research-2020/grid_world_aaron.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1328">
-              <caret line="127" column="22" lean-forward="true" selection-start-line="127" selection-start-column="22" selection-end-line="127" selection-end-column="22" />
+            <state relative-caret-position="-602">
+              <caret line="80" column="12" lean-forward="true" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="12" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -87,6 +88,7 @@
         <option value="$PROJECT_DIR$/dailyCodes/Grid World/grid_world.py" />
         <option value="$PROJECT_DIR$/dailyCodes/Grid World/1.py" />
         <option value="$PROJECT_DIR$/Daily_Codes/Grid World/grid_world_simulation.py" />
+        <option value="$PROJECT_DIR$/Daily_Codes/Grid World/123.py" />
         <option value="$PROJECT_DIR$/../UAV-Summer-Research-2020/grid_world_aaron.py" />
       </list>
     </option>
@@ -104,6 +106,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -126,7 +129,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -162,6 +164,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dailyCodes/Grid World/1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="123" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="UAV_Coverage" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Daily_Codes/Grid World" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Daily_Codes/Grid World/123.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -246,27 +269,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dailyCodes/Grid World/grid_world.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="grid_world" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="UAV_Coverage" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dailyCodes" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dailyCodes/grid_world.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -365,19 +367,19 @@
       <item itemvalue="Python.UAV_Coverage" />
       <item itemvalue="Python.getPath" />
       <item itemvalue="Python.task1 (1)" />
-      <item itemvalue="Python.grid_world" />
       <item itemvalue="Python.grid_world (1)" />
       <item itemvalue="Python.1" />
       <item itemvalue="Python.grid_world_simulation" />
       <item itemvalue="Python.grid_world_aaron" />
+      <item itemvalue="Python.123" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.grid_world_aaron" />
+        <item itemvalue="Python.123" />
         <item itemvalue="Python.grid_world_simulation" />
         <item itemvalue="Python.1" />
         <item itemvalue="Python.grid_world (1)" />
-        <item itemvalue="Python.grid_world" />
       </list>
     </recent_temporary>
   </component>
@@ -395,15 +397,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1679" height="1027" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.018094089" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22603978" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25240642" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25240642" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -418,14 +420,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/gym/wrappers/monitor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dailyCodes/Gym OpenAI/recording/openaigym.episode_batch.0.48458.stats.json" />
     <entry file="file://$PROJECT_DIR$/../gym-gridworlds/setup.py" />
     <entry file="file://$PROJECT_DIR$/../gym-gridworlds/gym_gridworlds/envs/gridworld_env.py" />
     <entry file="file://$PROJECT_DIR$/../gym-gridworlds/gym_gridworlds/__init__.py" />
@@ -533,16 +527,7 @@
     <entry file="file://$PROJECT_DIR$/dailyCodes/GridWorld/grid.py" />
     <entry file="file://$PROJECT_DIR$/dailyCodes/GridWorld/GridWorldEnv.py" />
     <entry file="file://$PROJECT_DIR$/dailyCodes/gridworld.py" />
-    <entry file="file://$PROJECT_DIR$/../UAV-Summer-Research-2020/grid_world.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
-          <folding>
-            <element signature="e#269#279#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../UAV-Summer-Research-2020/grid_world.py" />
     <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/gym/envs/classic_control/rendering.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-563">
@@ -550,23 +535,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dailyCodes/Gym implements/wrapper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-          <folding>
-            <element signature="e#60#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dailyCodes/Gym implements/CartPole.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="22" column="35" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="22" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dailyCodes/Gym implements/wrapper.py" />
+    <entry file="file://$PROJECT_DIR$/dailyCodes/Gym implements/CartPole.py" />
     <entry file="file://$PROJECT_DIR$/getPath/get_path.py" />
     <entry file="file://$PROJECT_DIR$/dailyCodes/results.csv" />
     <entry file="file://$PROJECT_DIR$/dailyCodes/optimal_policy_-1" />
@@ -575,22 +545,10 @@
     <entry file="file://$PROJECT_DIR$/dailyCodes/tic_tac_toe.py" />
     <entry file="file://$PROJECT_DIR$/dailyCodes/tic-tac-toe_reference.py" />
     <entry file="file://$PROJECT_DIR$/dailyCodes/.ipynb_checkpoints/Tic-Tac-Toe-checkpoint.ipynb" />
-    <entry file="file://$PROJECT_DIR$/dailyCodes/Tic-Tac-Toe/Tic-Tac-Toe.ipynb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="543" column="3" lean-forward="true" selection-start-line="543" selection-start-column="3" selection-end-line="543" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dailyCodes/Tic-Tac-Toe/Tic-Tac-Toe.ipynb" />
     <entry file="file://$PROJECT_DIR$/dailyCodes/1.py" />
     <entry file="file://$PROJECT_DIR$/dailyCodes/grid_world.py" />
-    <entry file="file://$PROJECT_DIR$/dailyCodes/Gym implements/monitor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dailyCodes/Gym implements/monitor.py" />
     <entry file="file://$USER_HOME$/.local/lib/python3.6/site-packages/gym/spaces/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -598,31 +556,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dailyCodes/Grid World/Grid_World.ipynb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/getPath/get_path_v0.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-508" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dailyCodes/Grid World/grid_world.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-          <folding>
-            <element signature="e#214#224#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dailyCodes/Grid World/1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="131" selection-start-line="131" selection-end-line="131" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dailyCodes/Grid World/Grid_World.ipynb" />
+    <entry file="file://$PROJECT_DIR$/getPath/get_path_v0.py" />
+    <entry file="file://$PROJECT_DIR$/dailyCodes/Grid World/grid_world.py" />
+    <entry file="file://$PROJECT_DIR$/dailyCodes/Grid World/1.py" />
     <entry file="file://$PROJECT_DIR$/../UAV-Summer-Research-2020/get_path.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-908">
@@ -632,20 +569,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getPath/get_path_v1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="70" column="24" lean-forward="true" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Daily_Codes/Grid World/grid_world_simulation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/getPath/get_path_v1.py" />
     <entry file="file://$PROJECT_DIR$/Daily_Codes/Grid World/Grid_World.ipynb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3322">
@@ -653,10 +577,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Daily_Codes/Grid World/state_values.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Daily_Codes/Grid World/grid_world_simulation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5472">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#214#224#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Daily_Codes/Grid World/123.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="116" column="30" selection-start-line="116" selection-start-column="30" selection-end-line="116" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../UAV-Summer-Research-2020/grid_world_aaron.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1328">
-          <caret line="127" column="22" lean-forward="true" selection-start-line="127" selection-start-column="22" selection-end-line="127" selection-end-column="22" />
+        <state relative-caret-position="-602">
+          <caret line="80" column="12" lean-forward="true" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="12" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
