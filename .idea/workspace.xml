@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6695a53a-2cd8-459d-8415-3a2ceac3f83c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Daily_Codes/Grid World/past_all.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily_Codes/Grid World/.ipynb_checkpoints/Past_All_Grids-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Daily_Codes/Grid World/.ipynb_checkpoints/Past_All_Grids-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily_Codes/Grid World/Past_All_Grids.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Daily_Codes/Grid World/Past_All_Grids.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily_Codes/Grid World/past_all.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,24 +14,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Daily_Codes/Grid World/grid_world_simulation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="170" column="29" lean-forward="true" selection-start-line="170" selection-start-column="29" selection-end-line="170" selection-end-column="29" />
+            <state relative-caret-position="1967">
+              <caret line="220" column="53" lean-forward="true" selection-start-line="220" selection-start-column="53" selection-end-line="220" selection-end-column="53" />
               <folding>
                 <element signature="e#214#224#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Daily_Codes/Grid World/past_all.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2143">
-              <caret line="128" column="31" lean-forward="true" selection-start-line="128" selection-start-column="31" selection-end-line="128" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -95,10 +88,10 @@
         <option value="$PROJECT_DIR$/dailyCodes/1.py" />
         <option value="$PROJECT_DIR$/dailyCodes/Grid World/grid_world.py" />
         <option value="$PROJECT_DIR$/dailyCodes/Grid World/1.py" />
-        <option value="$PROJECT_DIR$/Daily_Codes/Grid World/grid_world_simulation.py" />
         <option value="$PROJECT_DIR$/Daily_Codes/Grid World/123.py" />
         <option value="$PROJECT_DIR$/../UAV-Summer-Research-2020/grid_world_aaron.py" />
         <option value="$PROJECT_DIR$/Daily_Codes/Grid World/past_all.py" />
+        <option value="$PROJECT_DIR$/Daily_Codes/Grid World/grid_world_simulation.py" />
       </list>
     </option>
   </component>
@@ -160,7 +153,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.past_all">
+  <component name="RunManager" selected="Python.grid_world_simulation">
     <configuration name="1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="UAV_Coverage" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -385,8 +378,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.past_all" />
         <item itemvalue="Python.grid_world_simulation" />
+        <item itemvalue="Python.past_all" />
         <item itemvalue="Python.grid_world_aaron" />
         <item itemvalue="Python.123" />
         <item itemvalue="Python.1" />
@@ -408,13 +401,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="-304" width="1920" height="1057" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14639284" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14639284" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.031088082" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.08601036" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -599,20 +593,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Daily_Codes/Grid World/grid_world_simulation.py">
+    <entry file="file://$PROJECT_DIR$/Daily_Codes/Grid World/past_all.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="170" column="29" lean-forward="true" selection-start-line="170" selection-start-column="29" selection-end-line="170" selection-end-column="29" />
-          <folding>
-            <element signature="e#214#224#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="552">
+          <caret line="117" column="28" lean-forward="true" selection-start-line="117" selection-start-column="28" selection-end-line="117" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Daily_Codes/Grid World/past_all.py">
+    <entry file="file://$PROJECT_DIR$/Daily_Codes/Grid World/grid_world_simulation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2143">
-          <caret line="128" column="31" lean-forward="true" selection-start-line="128" selection-start-column="31" selection-end-line="128" selection-end-column="31" />
+        <state relative-caret-position="1967">
+          <caret line="220" column="53" lean-forward="true" selection-start-line="220" selection-start-column="53" selection-end-line="220" selection-end-column="53" />
+          <folding>
+            <element signature="e#214#224#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
