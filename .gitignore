@@ -22,3 +22,7 @@ Grid World/.ipynb_checkpoints/Past_All_Grids_v2-Copy1-checkpoint.ipynb
 Grid World/.ipynb_checkpoints/Past_All_Grids_v2-Copy2-checkpoint.ipynb
 Grid World/.ipynb_checkpoints/Past_All_Grids_v2-checkpoint.ipynb
 .idea/UAV_Coverage.iml
+gym_gridworld/__pycache__/__init__.cpython-36.pyc
+gym_gridworld/gym_gridworld/__pycache__/__init__.cpython-36.pyc
+gym_gridworld/gym_gridworld/envs/__pycache__/__init__.cpython-36.pyc
+gym_gridworld/gym_gridworld/envs/__pycache__/gridworld_env.cpython-36.pyc
