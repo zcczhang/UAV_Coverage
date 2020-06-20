@@ -19,11 +19,11 @@
 
 <img src="https://raw.githubusercontent.com/zcczhang/UAV_Coverage/master/Grid%20World/4x5simulation.gif" width="180" height="180" />
 
-- [Version2](https://github.com/zcczhang/UAV_Coverage/blob/master/Grid%20World/Past_All_Grids_v2.ipynb) 4x5 grid world (agent prefer to visit unvisited grids) and both covering+getting back and convering only situations. 
+- [Version2](https://github.com/zcczhang/UAV_Coverage/blob/master/Grid%20World/Past_All_Grids_v2.ipynb): 4x5 grid world (agent prefer to visit unvisited grids) and both covering+getting back and convering only situations. 
 
-- [Version1-1](https://github.com/zcczhang/UAV_Coverage/blob/master/Grid%20World/Past_All_Grids.ipynb) backpropagation
+- [Version1-1](https://github.com/zcczhang/UAV_Coverage/blob/master/Grid%20World/Past_All_Grids.ipynb): backpropagation
 
-- [Version1](https://github.com/zcczhang/UAV_Coverage/blob/master/Grid%20World/Past_All_Grids.ipynb) for small 2x3 grid world (step randomly)
+- [Version1](https://github.com/zcczhang/UAV_Coverage/blob/master/Grid%20World/Past_All_Grids.ipynb): for small 2x3 grid world (step randomly)
 
 - [simulation](https://github.com/zcczhang/UAV_Coverage/blob/master/Grid%20World/grid_world_simulation.py)
 
