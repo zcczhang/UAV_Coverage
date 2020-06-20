@@ -12,7 +12,7 @@
 
 - [Verson1](https://github.com/zcczhang/UAV_Coverage/blob/master/Grid%20World/Grid_World.ipynb): backpropagation
 
--
+---
 
 
 ### 2. Find the Shortes Coverage Path and Get Back
