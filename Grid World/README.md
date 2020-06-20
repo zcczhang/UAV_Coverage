@@ -17,7 +17,7 @@
 
 ### 2. Find the Shortes Coverage Path and Get Back
 
-<img src="https://raw.githubusercontent.com/zcczhang/UAV_Coverage/master/Grid%20World/4x5simulation.gif" width="159" height="160" />
+<img src="https://raw.githubusercontent.com/zcczhang/UAV_Coverage/master/Grid%20World/4x5simulation.gif" width="180" height="180" />
 
 - [Version2](https://github.com/zcczhang/UAV_Coverage/blob/master/Grid%20World/Past_All_Grids_v2.ipynb) 4x5 grid world (agent prefer to visit unvisited grids) and both covering+getting back and convering only situations. 
 
