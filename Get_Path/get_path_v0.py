@@ -11,6 +11,7 @@ from csv import writer
 """
 # get two points in the diagonal
 top_left, bottom_right = (44.937541, -93.168826), (44.936920, -93.168255)
+
 # set the radius
 r = 5
 """
