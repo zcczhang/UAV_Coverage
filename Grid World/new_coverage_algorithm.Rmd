@@ -1,6 +1,8 @@
 ---
 title: "New Coverage Algorithm"
-output: md_document
+output: 
+  pdf_document:
+    keep_md: yes
 ---
 
 ```{r}
