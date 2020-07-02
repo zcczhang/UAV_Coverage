@@ -40,7 +40,7 @@ Environment Example(7x8):
 ROWS = 20
 COLS = 20
 START = 1
-Reward = 200
+Reward = 100
 ```
 
 ```r
@@ -70,14 +70,14 @@ for (i in 0:(COLS-3)) {
 # give reward
 if (COLS %% 2 == 0) {
   END = 2
-  R[2, c(1, COLS+2, 3)] = Reward
+  R[c(1, COLS+2, 3), 2] = Reward
 # else if (ROWS %% 2 == 0) {
 #   END = COLS+1
 #   R[END, c(1, END+1, END+COLS)] = Reward
 # }
 } else {
   END = 2
-  R[2, c(1, COLS+2, 3)] = 0
+  R[c(1, COLS+2, 3), 2] = Reward
   print("Not Hamiltomian Cycle so No Coverage Path!")
 }
 Q = matrix(0, V, V)
@@ -143,7 +143,7 @@ toc()
 ```
 
 ```
-## 236.383 sec elapsed
+## 249.624 sec elapsed
 ```
 
 ```r
