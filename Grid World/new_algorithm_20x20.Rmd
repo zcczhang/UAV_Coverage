@@ -35,8 +35,8 @@ Environment Example(7x8):
 ## Global variable
 
 ```{r}
-ROWS = 16
-COLS = 16
+ROWS = 20
+COLS = 20
 START = 1
 Reward = 200
 ```
