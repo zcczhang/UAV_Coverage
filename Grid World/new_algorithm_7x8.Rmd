@@ -9,9 +9,10 @@ date: "July 1 2020"
 
 ```{r}
 options(digits = 6)
+library(tictoc)
 ```
 
-Environment:
+Environment Example(7x8):
 
 """
 
@@ -34,10 +35,10 @@ Environment:
 ## Global variable
 
 ```{r}
-ROWS = 7
+ROWS = 20
 COLS = 8
-END = 2
 START = 1
+Reward = 100
 ```
 ```{r}
 V = ROWS * COLS
@@ -64,12 +65,24 @@ for (i in 0:(COLS-3)) {
   }
 }
 # give reward
-R[2, c(1, 10, 3)] = 100
+# if (COLS %% 2 == 0) {
+#   END = 2
+#   R[2, c(1, COLS+2, 3)] = Reward
+# } else if (ROWS %% 2 == 0) {
+#   END = COLS+1
+#   R[END, c(1, END+1, END+COLS)] = Reward
+# } else {
+#   END = 2
+#   R[2, c(1, COLS+2, 3)] = Reward
+#   print("still working on this part!")
+# }
+END = 2
+R[2, c(1,3,12)] = Reward
 Q = matrix(0, V, V)
-alpha = 0.6
+alpha = 0.5
 ```
 ```{r}
-rounds = 500
+rounds = 1000
 r = 1
 get_actions <- function(s) {
   a = c()
@@ -83,6 +96,7 @@ get_actions <- function(s) {
 ## Core algorithm based on Q learning 
 
 ```{r}
+tic()
 while (r <= rounds) {
   s = sample(S, 1)
   while (TRUE) {
@@ -98,6 +112,7 @@ while (r <= rounds) {
   }
   r <- r+1
 }
+
 ```
 
 ## Find Path based on Q table
@@ -114,6 +129,14 @@ while (length(path) < V)
   Q[pre_state, ] = 1000
   Q[, pre_state] = 1000
 }
+```
+
+## Running Time
+
+```{r}
+toc()
+```
+```{r}
 path
 ```
 
