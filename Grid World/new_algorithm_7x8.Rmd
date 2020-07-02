@@ -35,10 +35,10 @@ Environment Example(7x8):
 ## Global variable
 
 ```{r}
-ROWS = 20
-COLS = 8
+ROWS = 16
+COLS = 16
 START = 1
-Reward = 100
+Reward = 200
 ```
 ```{r}
 V = ROWS * COLS
@@ -61,25 +61,24 @@ for(i in 1:(ROWS-2)) {
 # inside vertices
 for (i in 0:(COLS-3)) {
   for (j in 1:(ROWS-2)) {
-    R[j*COLS+2+i, c(j*COLS+1+i, j*COLS+3+i, j*COLS+10+i, j*COLS-6+i)] = 0
+    R[j*COLS+2+i, c(j*COLS+1+i, j*COLS+3+i, j*COLS+2+COLS+i, j*COLS+2-COLS+i)] = 0
   }
 }
 # give reward
-# if (COLS %% 2 == 0) {
-#   END = 2
-#   R[2, c(1, COLS+2, 3)] = Reward
-# } else if (ROWS %% 2 == 0) {
+if (COLS %% 2 == 0) {
+  END = 2
+  R[2, c(1, COLS+2, 3)] = Reward
+# else if (ROWS %% 2 == 0) {
 #   END = COLS+1
 #   R[END, c(1, END+1, END+COLS)] = Reward
-# } else {
-#   END = 2
-#   R[2, c(1, COLS+2, 3)] = Reward
-#   print("still working on this part!")
 # }
-END = 2
-R[2, c(1,3,12)] = Reward
+} else {
+  END = 2
+  R[2, c(1, COLS+2, 3)] = 0
+  print("Not Hamiltomian Cycle so No Coverage Path!")
+}
 Q = matrix(0, V, V)
-alpha = 0.5
+alpha = 0.6
 ```
 ```{r}
 rounds = 1000
