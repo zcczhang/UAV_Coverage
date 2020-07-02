@@ -1,0 +1,77 @@
+---
+title: "New Coverage Algorithm"
+output: 
+  html_document:
+    keep_md: yes
+---
+
+```{r}
+options(digits = 4)
+```
+```{r}
+V = 9
+S = (1:V)
+alpha = 0.6
+END = 9
+```
+```{r}
+# Environment:
+#  7 - 8 - 9
+#  4 - 5 - 6
+#  1 - 2 - 3
+R = rbind(c(-1, 0, -1, 0, -1, -1, -1, -1, -1), 
+          c(0, -1, 0, -1, 0, -1, -1, -1, -1),
+          c(-1, 0, -1, -1, -1, 0, -1, -1, -1),
+          c(0, -1, -1, -1, 0, -1, 0, -1, -1),
+          c(-1, 0, -1, 0, -1, 0, -1, 0, -1),
+          c(-1, -1, 0, -1, 0, -1, -1, -1, 100),
+          c(-1, -1, -1, 0, -1, -1, -1, 0, -1),
+          c(-1, -1, -1, -1, 0, -1, 0, -1, 100),
+          c(-1, -1, -1, -1, -1, 0, -1, 0, -1))
+Q = matrix(0, 9, 9)
+```
+```{r}
+rounds = 1000
+r = 0
+
+get_actions <- function(s) {
+  a = c()
+  for (i in 1:V) {
+    if(R[s,i] != -1) a = c(a, i)
+  }
+  return(a)
+}
+```
+```{r}
+while (r <= rounds) {
+  s = sample(S, 1)
+  while (TRUE) {
+    action_space = get_actions(s)
+    action <- sample(action_space, 1)
+    s_next <- action
+    actions_next = get_actions(s_next)
+    qs = c()
+    for (i in actions_next) qs = c(Q[s_next,i])
+    Q[s,action] <- R[s,action] + alpha * max(qs)
+    s = s_next
+    if (s == END) break
+  }
+  r <- r+1
+}
+Q
+```
+```{r}
+path = c()
+state = 1
+Q[Q == 0] <- 1000
+while (length(path) < V)
+{
+  pre_state = state
+  path = c(path, state)
+  state = match((min(Q[state,])), Q[state,])
+  Q[pre_state, ] = 1000
+  Q[, pre_state] = 1000
+}
+path
+```
+
