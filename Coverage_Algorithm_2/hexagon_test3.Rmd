@@ -1,22 +1,22 @@
 ---
-title: "Hexagon Tiling Coverage: 17 Vertices"
+title: "Hexagon Tiling Coverage: 15 Vertices"
 author: "Charles Zhang"
 date: "July 2"
 output: pdf_document
 ---
 
-```{r message=FALSE, warning=FALSE}
+```{r message=FALSE, warning=FALSE, echo=FALSE}
 options(digits = 6)
 library(tictoc)
 ```
 
 ## Environment
 
-![](/Users/apple/Desktop/UAV_Coverage/Pictures/17hexagons.png)
+![](/Users/apple/Desktop/UAV_Coverage/Pictures/15hexagons.png)
 
 ```{r}
 START = 1
-V = 17
+V = 15
 Reward = 100
 alpha = 0.1
 decay_gamma = 0.6    # discont factor
@@ -25,27 +25,25 @@ Q = matrix(0, V, V)   # initialized VxV Q table
 ```
 
 ```{r}
-R = matrix(-1, V, V)
-R[1,c(2,6,7)] = 0
-R[2,c(1,3,7)] = 0
-R[3,c(2,8,7,9,4)] = 0
-R[4,c(3,5,9)] = 0
-R[5,c(4,10,9)] = 0
-R[6,c(1,7,11,12)] = 0
-R[7,c(1,2,3,6,8,12)] = 0
-R[8,c(3,7,9,14,13,12)] = 0
-R[9,c(3,4,5,10,8,14)] = 0
-R[10,c(5,9,14,15)] = 0
-R[11,c(6,12,16)] = 0
-R[12,c(7,8,6,13,16,11)] = 0
-R[13,c(8,12,14,16,17)] = 0
-R[14,c(9,8,13,17,15,10)] = 0
-R[15,c(10,14,17)] = 0
-R[16,c(11,12,13)] = 0
-R[17,c(14,15,13)] = 0
-
+# adjacent matrix of the graph
+Adj = cbind(c(0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0), 
+            c(1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0), 
+            c(0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0), 
+            c(0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0), 
+            c(0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0), 
+            c(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0), 
+            c(1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0), 
+            c(1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0), 
+            c(0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0), 
+            c(0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0), 
+            c(0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1), 
+            c(0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1), 
+            c(0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0), 
+            c(0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0), 
+            c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0))
+R = Adj-1
 END = 7
-R[c(1,2,3,6,8,12),END] = Reward
+R[c(1,8,13),END] = Reward
 ```
 
 ```{r}
@@ -60,7 +58,7 @@ get_actions <- function(s) {
 
 ```{r}
 tic()
-rounds = 5000
+rounds = 500
 r = 1
 while (r <= rounds) {
   s = sample(S, 1)   # random state
@@ -110,9 +108,6 @@ toc()
 path
 ```
 
-## Compare with GPS waypoints
+## Compare with previous GPS waypoints we got
 
-![](/Users/apple/Desktop/UAV_Coverage/Get_Path/GPS waypoints/coord_1.png)
-
-
-
+![](/Users/apple/Desktop/UAV_Coverage/Get_Path/GPS waypoints/coord_2.png)
