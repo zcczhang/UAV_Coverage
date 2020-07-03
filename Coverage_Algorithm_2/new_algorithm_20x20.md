@@ -41,7 +41,11 @@ ROWS = 20
 COLS = 20
 START = 1
 Reward = 100
+alpha = 0.6    # discont factor
 ```
+
+> Create Reward Matrix(VxV): 0 if connected, -1 if not connected. In reward matrix, [i,j] means go from i to j.
+
 
 ```r
 V = ROWS * COLS
@@ -69,24 +73,25 @@ for (i in 0:(COLS-3)) {
 }
 # give reward
 if (COLS %% 2 == 0) {
-  END = 2
+  END = 2  # aviod repetition from the start point 1
   R[c(1, COLS+2, 3), 2] = Reward
 # else if (ROWS %% 2 == 0) {
 #   END = COLS+1
-#   R[END, c(1, END+1, END+COLS)] = Reward
+#   R[END, c(1, END+1, END+COLS)] = Reward     # still working on this
 # }
 } else {
   END = 2
   R[c(1, COLS+2, 3), 2] = Reward
   print("Not Hamiltomian Cycle so No Coverage Path!")
 }
-Q = matrix(0, V, V)
-alpha = 0.6
+# initialized VxV Q table
+Q = matrix(0, V, V)    
 ```
 
+> find valid action space for the state s(<=> find connected vectex for the current state vertex)
+
+
 ```r
-rounds = 1000
-r = 1
 get_actions <- function(s) {
   a = c()
   for (i in 1:V) {
@@ -96,23 +101,25 @@ get_actions <- function(s) {
 }
 ```
 
-## Core algorithm based on Q learning 
+## Core algorithm based on SARSA on-policy reinforcement learning 
 
 
 ```r
 tic()
+rounds = 1000
+r = 1
 while (r <= rounds) {
-  s = sample(S, 1)
+  s = sample(S, 1)   # random state
   while (TRUE) {
-    action_space = get_actions(s)
-    action <- sample(action_space, 1)
-    s_next <- action
-    actions_next = get_actions(s_next)
+    action_space = get_actions(s)   # action space for S
+    action <- sample(action_space, 1)   # random action to the next state
+    s_next <- action    # next state S'
+    actions_next = get_actions(s_next)   # action space for S'
     qs = c()
-    for (i in actions_next) qs = c(Q[s_next,i], qs)
-    Q[s,action] <- R[s,action] + alpha * max(qs)
-    s = s_next
-    if (s == END) break
+    for (i in actions_next) qs = c(Q[s_next,i], qs)   # list of all Q(S',a')
+    Q[s,action] <- R[s,action] + alpha * max(qs)   # update by simple bellman equation
+    s = s_next    # update S
+    if (s == END) break   # reach the final state
   }
   r <- r+1
 }
@@ -128,9 +135,9 @@ Q[Q == 0] <- 1000
 while (length(path) < V)
 {
   pre_state = state
-  path = c(path, state)
-  state = match((min(Q[state,])), Q[state,])
-  Q[pre_state, ] = 1000
+  path = c(path, state)   # append the state
+  state = match((min(Q[state,])), Q[state,])   # argmin Q(S, )
+  Q[pre_state, ] = 1000     # clear the column and row of the appended state by giving a large number(could use sparse matrix in the future)
   Q[, pre_state] = 1000
 }
 ```
@@ -143,8 +150,11 @@ toc()
 ```
 
 ```
-## 249.624 sec elapsed
+## 242.072 sec elapsed
 ```
+
+## Coverage Path
+
 
 ```r
 path

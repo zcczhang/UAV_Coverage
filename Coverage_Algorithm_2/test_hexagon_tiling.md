@@ -80,7 +80,7 @@ get_actions <- function(s) {
 
 ```r
 r = 1
-rounds = 100
+rounds = 50
 tic()
 while (r <= rounds) {
   s = sample(S, 1)
@@ -121,7 +121,7 @@ toc()
 ```
 
 ```
-## 0.203 sec elapsed
+## 0.199 sec elapsed
 ```
 
 ```r
