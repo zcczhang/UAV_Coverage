@@ -1,0 +1,118 @@
+---
+title: "Irregular Field Coverage"
+author: "Charles Zhang"
+date: "July 2"
+output: pdf_document
+---
+
+```{r message=FALSE, warning=FALSE}
+options(digits = 6)
+library(tictoc)
+```
+
+## Environment
+
+![](/Users/apple/Desktop/UAV_Coverage/Pictures/17hexagons.png)
+
+```{r}
+START = 1
+V = 17
+Reward = 100
+alpha = 0.1
+decay_gamma = 0.6    # discont factor
+S = 1:V    
+Q = matrix(0, V, V)   # initialized VxV Q table
+```
+
+```{r}
+R = matrix(-1, V, V)
+R[1,c(2,6,7)] = 0
+R[2,c(1,3,7)] = 0
+R[3,c(2,8,7,9,4)] = 0
+R[4,c(3,5,9)] = 0
+R[5,c(4,10,9)] = 0
+R[6,c(1,7,11,12)] = 0
+R[7,c(1,2,3,6,8,12)] = 0
+R[8,c(3,7,9,14,13,12)] = 0
+R[9,c(3,4,5,10,8,14)] = 0
+R[10,c(5,9,14,15)] = 0
+R[11,c(6,12,16)] = 0
+R[12,c(7,8,6,13,16,11)] = 0
+R[13,c(8,12,14,16,17)] = 0
+R[14,c(9,8,13,17,15,10)] = 0
+R[15,c(10,14,17)] = 0
+R[16,c(11,12,13)] = 0
+R[17,c(14,15,13)] = 0
+
+END = 7
+R[c(1,2,3,6,8,12),END] = Reward
+```
+
+```{r}
+get_actions <- function(s) {
+  a = c()
+  for (i in 1:V) {
+    if(R[s,i] != -1) a = c(a, i)
+  }
+  return(a)
+}
+```
+
+```{r}
+tic()
+rounds = 5000
+r = 1
+while (r <= rounds) {
+  s = sample(S, 1)   # random state
+  while (TRUE) {
+    action_space = get_actions(s)   # action space for S
+    action <- sample(action_space, 1)   # random action to the next state
+    s_next <- action    # next state S'
+    actions_next = get_actions(s_next)   # action space for S'
+    qs = c()
+    for (i in actions_next) qs = c(Q[s_next,i], qs)   # list of all Q(S',a')
+    # update by SARSA TD learning
+    Q[s,action] <- Q[s,action]+ alpha*(R[s,action] + decay_gamma * max(qs)-Q[s,action])   
+    s = s_next    # update S
+    if (s == END) break   # reach the final state
+  }
+  r <- r+1
+}
+
+```
+
+## Find Path based on Q table
+
+```{r}
+path = c()
+state = START
+Q[Q == 0] <- 1000
+while (length(path) < V)
+{
+  pre_state = state
+  path = c(path, state)   # append the state
+  state = match((min(Q[state,])), Q[state,])   # argmin Q(S, )
+  Q[pre_state, ] = 1000     # clear the column and row of the appended state 
+  Q[, pre_state] = 1000     # by giving a large number
+}
+
+```
+
+## Running Time
+
+```{r}
+toc()
+```
+
+## Coverage Path
+
+```{r}
+path
+```
+
+## Compare with GPS waypoints
+
+![](/Users/apple/Desktop/UAV_Coverage/Get_Path/GPS waypoints/coord_1.png)
+
+
+
