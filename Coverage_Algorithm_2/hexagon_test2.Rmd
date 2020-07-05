@@ -21,7 +21,7 @@ Reward = 100
 alpha = 0.1
 decay_gamma = 0.6    # discont factor
 S = 1:V    
-Q = matrix(0, V, V)   # initialized VxV Q table
+Q = matrix(-1, V, V)   # initialized VxV Q table
 ```
 
 ```{r}
@@ -86,7 +86,7 @@ while (r <= rounds) {
 ```{r}
 path = c()
 state = START
-Q[Q == 0] <- 1000
+Q[Q == -1] <- 1000
 while (length(path) < V)
 {
   pre_state = state
