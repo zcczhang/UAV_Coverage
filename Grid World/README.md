@@ -1,20 +1,20 @@
 # Reinforcement Learning in Grid World
 ---
 
-### Find the Shortes Coverage Path and Get Back(Hamiltonian Circuit)
+### Find the Shortest Coverage Path and Get Back(Hamiltonian Circuit)
 
 
 ![](https://raw.githubusercontent.com/zcczhang/UAV_Coverage/master/Pictures/NMDP%20Tabular%20Q%20Learning.png)
 
-- [Version2](https://github.com/zcczhang/UAV_Coverage/blob/master/Grid%20World/Past_All_Grids_v2.ipynb): 4x5 grid world (agent prefer to visit unvisited grids) and both covering+getting back and convering only situations. 
+<img src="https://raw.githubusercontent.com/zcczhang/UAV_Coverage/master/Grid%20World/5x6simulation.gif" width="220" height="180" />
+
+- [Version2](https://github.com/zcczhang/UAV_Coverage/blob/master/Grid%20World/Past_All_Grids_v2.0.1.ipynb): implement the Algorithm 1 
 
 - [Version1-1](https://github.com/zcczhang/UAV_Coverage/blob/master/Grid%20World/Past_All_Grids.ipynb): backpropagation
 
 - [Version1](https://github.com/zcczhang/UAV_Coverage/blob/master/Grid%20World/Past_All_Grids.ipynb): for small 2x3 grid world (step randomly)
 
 - [simulation](https://github.com/zcczhang/UAV_Coverage/blob/master/Grid%20World/grid_world_simulation.py)
-
-<img src="https://raw.githubusercontent.com/zcczhang/UAV_Coverage/master/Grid%20World/4x5simulation.gif" width="180" height="180" />
 
 
 
