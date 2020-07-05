@@ -53,39 +53,15 @@ class RL:
             for i in range(int(10 - r / (rounds / 10)) + 1):
                 t += ' '
             print('\r{0}'.format(t + '|100%'), end="")
-            s = np.random.choice(self.S)
-            while True:
-                action_space = self.get_action_space(s)
-                action = np.random.choice(action_space)
-                s_next = action
-                actions_next = self.get_action_space(s_next)
-                qs = []
-                for a in actions_next:
-                    qs.append(self.Q[s_next][a])
-                self.Q[s][action] += self.alpha * (self.R[s][action] +
-                                                   self.decay_gamma * max(qs) -
-                                                   self.Q[s][action])
-                s = s_next
-                if s == self.END:
-                    break
+
+        # TODO
+
         end_time = datetime.datetime.now()
         print('\r{0}'.format("100%|==========|100%"))
         print("Running Time(s): ", (end_time - start_time).total_seconds())
 
+    # TODO
     def show_path(self):
-        path = []
-        for i in range(self.V):
-            for j in range(self.V):
-                if self.Q[i][j] == 0:
-                    self.Q[i][j] = 1000
-        state = self.START
-        while len(path) < self.V:
-            pre_state = state
-            path.append(state)
-            state = list(self.Q[state]).index(min(self.Q[state]))
-            for i in range(self.V):
-                self.Q[pre_state][i] = 1000
-                self.Q[i][pre_state] = 1000
-        path.append(self.START)
-        print(path)
+
+        pass
 
