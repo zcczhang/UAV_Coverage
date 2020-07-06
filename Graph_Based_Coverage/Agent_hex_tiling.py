@@ -28,7 +28,7 @@ def hex15():
     g.add_edge(11, [14])
 
     agent = rl_MDP.RL_MDP(G=g)
-    agent.train()
+    agent.train()       # better to use TD value update method
     agent.show_path()
 
 

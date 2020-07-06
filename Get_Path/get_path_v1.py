@@ -8,7 +8,7 @@ from csv import writer
 :input data
 """
 # get two points in the diagonal
-# top_left, bottom_right = (44.937541, -93.168826), (44.936920, -93.168255)
+top_left, bottom_right = (44.937541, -93.168826), (44.936920, -93.168255)
 # top_left, bottom_right = (44.937334, -93.168802), (44.937175, -93.168317)
 # top_left, bottom_right = (44.937363, -93.168796), (44.937048, -93.168330)
 # set the radius

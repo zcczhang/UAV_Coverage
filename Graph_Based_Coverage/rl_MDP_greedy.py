@@ -1,5 +1,5 @@
 __author__ = "Charles Zhang"
-__time__ = "2020-07-03 11:07"
+__time__ = "2020-07-06 12:42"
 
 import numpy as np
 import datetime
@@ -15,12 +15,14 @@ class RL_MDP:
                  START=0,
                  END=1,
                  REWARD=100,
-                 alpha=0.1,         # learning rate
-                 decay_gamma=0.6):  # discount factor
+                 alpha=0.3,         # learning rate
+                 decay_gamma=0.9,   # discount factor
+                 exp_rate=0.5):       # e-greedy parameter
         self.START = START
         self.END = END
         self.alpha = alpha
         self.decay_gamma = decay_gamma
+        self.exp_rate = exp_rate
         self.reward = REWARD
         self.G = G                          # Graph representation
         self.V = G.V                        # number of vertices V
@@ -42,6 +44,16 @@ class RL_MDP:
                 actions.append(i)               # equivalently, vertices are connected
         return actions
 
+    def get_action(self, s):
+        """
+        Greedy_Move
+        """
+        if np.random.uniform(0, 1) <= self.exp_rate:
+            if max(self.Q[s]) > 0:
+                return list(self.Q[s]).index(max(self.Q[s]))
+        action_space = self.get_action_space(s)
+        return np.random.choice(action_space)
+
     def train(self, rounds=500, l="TD"):
         """
         :param rounds: training total episodes
@@ -59,11 +71,9 @@ class RL_MDP:
             for i in range(int(10 - r / (rounds / 10)) + 1):
                 t += ' '
             print('\r{0}'.format(t + '|100%'), end="")
-
             s = np.random.choice(self.S)
             while True:
-                action_space = self.get_action_space(s)
-                action = np.random.choice(action_space)
+                action = self.get_action(s)
                 s_next = action
                 actions_next = self.get_action_space(s_next)
                 qs = []
