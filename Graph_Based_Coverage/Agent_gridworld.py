@@ -26,7 +26,7 @@ def gw7x8():
 
 def gw7x8_greedy():
     agent = rl_MDP_greedy.RL_MDP(G=g)
-    agent.train(rounds=1000, l='non-TD')  # better to use simple bellman equation if no greedy move
+    agent.train(rounds=1000, l='non-TD')
     agent.show_path()
 
 
