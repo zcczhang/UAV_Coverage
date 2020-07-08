@@ -15,7 +15,7 @@ class RL_MDP:
                  START=0,
                  END=1,
                  REWARD=100,
-                 alpha=0.1,         # learning rate
+                 alpha=0.3,         # learning rate
                  decay_gamma=0.6):  # discount factor
         self.START = START
         self.END = END
