@@ -1,5 +1,5 @@
 __author__ = "Charles Zhang"
-__time__ = "2020-07-05 15:55"
+__time__ = "2020-07-22 15:55"
 
 import numpy as np
 import datetime
@@ -23,7 +23,9 @@ class RL:
         self.R = self.get_R()               # Reward Matrix
         self.S = list(range(self.V))        # State space
         self.Q = np.zeros([self.V, self.V])      # initialize Q table
-        self.past_all = [False] * self.V    # list to observe if S is past
+        self.past_all = []                  # list to observe if S is past
+        for i in range(self.V):
+            self.past_all.append(False)
 
     def get_R(self):
         R = self.G.adjMatrix
@@ -59,6 +61,10 @@ class RL:
         end_time = datetime.datetime.now()
         print('\r{0}'.format("100%|==========|100%"))
         print("Running Time(s): ", (end_time - start_time).total_seconds())
+
+    def reset(self):
+
+        pass
 
     # TODO
     def show_path(self):

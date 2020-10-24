@@ -71,9 +71,9 @@ class GridMatrix(object):
 
 class GridWorldEnv(gym.Env):
 
-    def __init__(self, n_width: int = 10,
-                 n_height: int = 10,
-                 u_size=40,
+    def __init__(self, n_width: int = 4,
+                 n_height: int = 5,
+                 u_size=20,
                  default_reward: int = 0):
         self.u_size = u_size
         self.n_width = n_width
@@ -90,7 +90,7 @@ class GridWorldEnv(gym.Env):
         # 0,1,2,3,4 represent left, right, up, down, -, five moves.
         self.action_space = spaces.Discrete(4)
         self.observation_space = spaces.Discrete(self.n_height * self.n_width)
-        self.ends = [(9, 0)]  # ending grid(s)
+        self.ends = []  # ending grid(s)
         self.start = (0, 9)  # start grid
         self.rewards = []  # special awards, 0 for the end
         self.refresh_setting()
@@ -235,12 +235,12 @@ class GridWorldEnv(gym.Env):
 
 
 def grid_world():
-    env = GridWorldEnv(n_width=10,
-                       n_height=10,
-                       u_size=40,
+    env = GridWorldEnv(n_width=5,
+                       n_height=4,
+                       u_size=20,
                        default_reward=-1)
-    env.start = (0, 9)
-    env.ends = [(9, 0)]
+    env.start = (0, 4)
+    env.ends = []
     env.rewards = [(9, 0, 0)]
     env.refresh_setting()
     return env
