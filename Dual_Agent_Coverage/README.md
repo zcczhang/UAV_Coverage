@@ -1,6 +1,6 @@
-# UAV Coverage Path Planning for single/multi drones
+# UAV Coverage Path Planning for multi drones
 
-This program is for planing coverage path for a single or multiple drones on a discrete gridworld.
+This program is for planing coverage path for a single or multiple drones on a discrete gridworld using Actor Critic using Kronecker-Factored Trust Region (ACKTR) in stable baselines in Python.
 
 ![2 Drones Coverage Path on 10x10 Field](pic/coverage_animation.gif)
 
