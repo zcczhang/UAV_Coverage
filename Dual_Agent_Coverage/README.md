@@ -2,13 +2,14 @@
 
 This program is for planing coverage path for a single or multiple drones on a discrete gridworld.
 
-![2 Drones Coverage Path on 10x10 Field](src/coverage_animation.gif)
+![2 Drones Coverage Path on 10x10 Field](pic/coverage_animation.gif)
 
 *2 Drones Coverage Path Animation*
 
-![Training Plot over Episode of 2 drones on 10x10 Feild](src/training_plot.png)
+![Training Plot over Episode of 2 drones on 10x10 Feild](pic/10x10_1.png)
+![Training Plot over Episode of 2 drones on 10x10 Feild](pic/10x10_2.png)
 
-*Training Plot over Episode of 2 drones on 10x10 Feild*
+*Training Plots over Episode of 2 drones on 10x10 Feild*
 
 ## Installation
 
