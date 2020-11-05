@@ -1,4 +1,4 @@
-from gridwrold_env_2 import GridworldEnv
+from gridwrold_env_multi import GridworldEnv
 from stable_baselines.common.env_checker import check_env
 from stable_baselines import DQN, PPO2, A2C, ACKTR
 from stable_baselines.common.cmd_util import make_vec_env
@@ -9,6 +9,7 @@ import numpy as np
 from stable_baselines.bench import Monitor
 from stable_baselines.results_plotter import load_results, ts2xy
 from stable_baselines.common.callbacks import BaseCallback
+from stable_baselines import results_plotter
 
 
 class SaveOnBestTrainingRewardCallback(BaseCallback):
@@ -60,8 +61,8 @@ class SaveOnBestTrainingRewardCallback(BaseCallback):
 
 
 # configurations
-w = 6
-h = 6
+w = 10
+h = 10
 
 # Create log dir
 log_dir = "/tmp/gym/"
@@ -77,11 +78,11 @@ check_env(env, warn=True)
 env = make_vec_env(lambda: env, n_envs=1)
 
 # Train the agent
-model = ACKTR('MlpPolicy', env, verbose=1).learn(100000, callback=callback)
-
+model = ACKTR('MlpPolicy', env, verbose=1, learning_rate=0.15).learn(100000, callback=callback)
 # Test the trained agent
 obs = env.reset()
-n_steps = w * h
+n_steps = w * h // 2
+
 for step in range(n_steps):
     action, _ = model.predict(obs, deterministic=True)
     print("Step {}".format(step + 1))
@@ -126,8 +127,6 @@ def plot_results(log_folder, title='Learning Curve'):
     plt.title(title + " Smoothed")
     plt.show()
 
-
-from stable_baselines import results_plotter
 
 # Helper from the library
 results_plotter.plot_results([log_dir], 1e5, results_plotter.X_TIMESTEPS, "Hexworld Coverage")

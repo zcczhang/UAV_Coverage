@@ -167,11 +167,11 @@ class GridworldEnv(gym.Env):
             return self.get_obs_space(), 0, True, {}
         elif self.board.is_filled():  # All grids has been visited once
             # self._write_path()
-            reward = (self.width + self.height) * 20
+            reward = (self.width + self.height) * 2
             for index, pos in enumerate(self.agent_positions):
                 i, j = pos
                 org_i, org_j = self.orignal_positions[index]
-                reward += ((- abs(i - org_i) - abs(j - org_j)) * 10)
+                reward += (- abs(i - org_i) - abs(j - org_j))
             self._write_path()
             return self.get_obs_space(), reward, True, {}
         else:   # The grid has not been visited
@@ -207,4 +207,3 @@ class GridworldEnv(gym.Env):
             i, j = pos
             board[i][j] = f"[{index}]"
         return tabulate(board)
-
