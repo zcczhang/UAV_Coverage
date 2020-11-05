@@ -1,14 +1,15 @@
-from hexagon_env import HexagonEnv
-from find_moves import find_moves_hexagons
+from Double_Q_Learning.hexagon_env import HexagonEnv
+from Double_Q_Learning.find_moves import find_moves_hexagons
 import numpy as np
 import matplotlib.pyplot as plt
 import time
-from ag_helper_functions import *
+from Double_Q_Learning.ag_helper_functions import *
 
 """
 A class that contains the logic to have two agents run together but this time it controls the teo agents at the same
 time (i.e action is is both their moves)
 """
+
 
 class DoubleHexagonAgent:
 
@@ -184,6 +185,7 @@ def get_single_path(tup_path, cols):
     for i in tup_path:
         single_path.append(tuple_to_single_index(i, cols))
     return single_path
+
 
 if __name__ == "__main__":
     rows = 5

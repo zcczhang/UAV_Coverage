@@ -1,5 +1,5 @@
-from hexagon_env import HexagonEnv
-from find_moves import find_moves_hexagons
+from Double_Q_Learning.hexagon_env import HexagonEnv
+from Double_Q_Learning.find_moves import find_moves_hexagons
 import numpy as np
 import time
 

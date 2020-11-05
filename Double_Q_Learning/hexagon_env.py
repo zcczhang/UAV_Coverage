@@ -1,5 +1,5 @@
 import numpy as np
-from find_moves import find_moves_hexagons
+from Double_Q_Learning.find_moves import find_moves_hexagons
 import gym
 
 
