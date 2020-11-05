@@ -2,12 +2,13 @@ from Double_Q_Learning.hexagon_env import HexagonEnv
 from Double_Q_Learning.find_moves import find_moves_hexagons
 import numpy as np
 import matplotlib.pyplot as plt
-import time
 from Double_Q_Learning.ag_helper_functions import *
+from scipy.ndimage.filters import gaussian_filter1d
 
 """
 A class that contains the logic to have two agents run together but this time it controls the teo agents at the same
 time (i.e action is is both their moves)
+Credit to Aaron Gould, Elisabeth Landgren, and Fan Zhang who collaborate with me on this project
 """
 
 
@@ -190,11 +191,12 @@ def get_single_path(tup_path, cols):
 if __name__ == "__main__":
     rows = 5
     cols = 5
+    rounds = 5000
 
     agents = DoubleHexagonAgent(rows, cols)
     agents.reset_all()
 
-    steps, rewards = agents.train(rounds=5000)
+    steps, rewards = agents.train(rounds=rounds)
     # agents.show_path(0)
     print()
     # agents.show_path(1)
@@ -211,5 +213,23 @@ if __name__ == "__main__":
     print(get_single_path(path0, cols))
     print(get_single_path(path1, cols))
 
-    plt.plot(rewards)
+    x = []
+    for i in range(rounds):
+        x.append(i)
+    y = steps
+    y_smoothed = gaussian_filter1d(y, sigma=2)
+    # plt.plot(x,y)
+    plt.plot(x, y_smoothed)
+    plt.ylabel('Number of Steps')
+    plt.xlabel('Episode')
+    plt.title('Double Q Learning Steps Convergence(Smoothed)')
     plt.show()
+    y = rewards
+    y_smoothed = gaussian_filter1d(y, sigma=2)
+    # plt.plot(x,y)
+    plt.plot(x, y_smoothed)
+    plt.ylabel('Number of Steps')
+    plt.xlabel('Episode')
+    plt.title('Double Q Learning Rewards Convergence(Smoothed)')
+    plt.show()
+
