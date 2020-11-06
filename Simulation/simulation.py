@@ -1,6 +1,6 @@
 from graphics import *
 from math import pi, cos, sin, sqrt
-from Double_Q_Learning.ag_helper_functions import tuple_to_single_index
+from multi_agent_Q_Learning.ag_helper_functions import tuple_to_single_index
 
 """
 Credit to Aaron Gould, Elisabeth Landgren, and Fan Zhang who collaborate with me on this project
@@ -300,13 +300,13 @@ def simulate_hex(rows, columns, path1, path2=None, side_length: int = 40, win=No
             hex2.setWidth(0)
 
         if num_visits_1 == 1:
-            hex1.setFill("green")
+            hex1.setFill("lightgreen")
         elif num_visits_1 > 1:
             hex1.setFill("red")
 
         if path2 is not None:
             if num_visits_2 == 1:
-                hex2.setFill("blue")
+                hex2.setFill("lightblue")
             elif num_visits_2 > 1:
                 hex2.setFill("red")
 
@@ -329,12 +329,12 @@ def simulate_hex(rows, columns, path1, path2=None, side_length: int = 40, win=No
 
 
 if __name__ == '__main__':
-    # manually typed hex example simulation
-    # path1 = [0, 1, 2, 3, 7]
-    # path2 = [11, 6, 5, 9, 4]
+    # hex example simulation
+    # path1 = [0, 5, 11, 5, 6, 1, 2, 7, 2, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+    # path2 = [19, 14, 9, 13, 8, 8, 13, 7, 11, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16]
     #
-    # simulate_hex(path1=path1, path2=path2, rows=3, columns=4, side_length=40, win=None, open_until_close=True,
-    # slow_down=0.5)
+    # simulate_hex(path1=path1, path2=path2, rows=5, columns=5, side_length=40, win=None, open_until_close=True,
+    # slow_down=0.1)
 
     # # yin/yang square example simulation
     # path1 = [0, 1, 2, 3, 7, 6]
@@ -364,9 +364,12 @@ if __name__ == '__main__':
     #              open_until_close=True,
     #              slow_down=0.5)
     #  square example simulation
-    path1 = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 91, 92, 93, 94, 95, 96, 97, 98, 88, 78, 68, 58, 48, 38, 28, 18, 17,
-             16, 15, 25, 35, 45, 55, 65, 75, 85, 86, 87, 77, 67, 57, 47, 37, 27, 26, 36, 46, 56, 66, 76]
-    path2 = [99, 89, 79, 69, 59, 49, 39, 29, 19, 9, 8, 7, 6, 5, 4, 3, 2, 1, 11, 21, 31, 41, 51, 61, 71, 81, 82, 83, 84,
-             74, 64, 54, 44, 34, 24, 14, 13, 12, 22, 32, 42, 52, 62, 72, 73, 63, 53, 43, 33, 23]
+    # path1 = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 91, 92, 93, 94, 95, 96, 97, 98, 88, 78, 68, 58, 48, 38, 28, 18, 17,
+    #          16, 15, 25, 35, 45, 55, 65, 75, 85, 86, 87, 77, 67, 57, 47, 37, 27, 26, 36, 46, 56, 66, 76]
+    # path2 = [99, 89, 79, 69, 59, 49, 39, 29, 19, 9, 8, 7, 6, 5, 4, 3, 2, 1, 11, 21, 31, 41, 51, 61, 71, 81, 82, 83, 84,
+    #          74, 64, 54, 44, 34, 24, 14, 13, 12, 22, 32, 42, 52, 62, 72, 73, 63, 53, 43, 33, 23]
+
+    path1 = [0, 6, 7, 6, 12, 18, 19, 20, 21, 15, 16, 10, 4, 3, 2, 1, 2, 8, 14, 8, 2]
+    path2 = [29, 28, 27, 26, 27, 26, 25, 24, 25, 19, 13, 14, 8, 9, 10, 4, 5, 11, 17, 23, 22]
     print(len(path1), len(path2))
-    simulate_grid(path1=path1, path2=path2, rows=10, columns=10, win=None, open_until_close=True, slow_down=0.1)
+    simulate_grid(path1=path1, path2=path2, rows=5, columns=6, win=None, open_until_close=True, slow_down=0.1)

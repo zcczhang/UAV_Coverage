@@ -1,5 +1,5 @@
 import numpy as np
-from Double_Q_Learning.find_moves import find_moves_hexagons
+from multi_agent_Q_Learning.find_moves import find_moves_hexagons
 import gym
 
 
@@ -9,16 +9,14 @@ class HexagonEnv(gym.Env):
         self.BOARD_ROWS = BOARD_ROWS
         self.BOARD_COLS = BOARD_COLS
         super(HexagonEnv, self).__init__()
-        self.board = np.zeros([BOARD_ROWS + 1, BOARD_COLS + 1])  # I add one here to give the longer columns space
+        self.board = np.zeros([BOARD_ROWS + 1, BOARD_COLS + 1])  # add one here to give the longer columns space
         self.state = (0, 0)
-        #self.action_space = spaces.Discrete(4)  # I am not really using this stuff right now.
         self.visited = set()
         self.visited.add(tuple(self.state))
         self.side_length = side_length  # for rendering
         self.win = None  # for rendering
 
-
-    def reset(self, pos = (0,0)):
+    def reset(self, pos=(0, 0)):
         self.state = pos
         self.visited = set()
         self.visited.add(tuple(self.state))
@@ -70,9 +68,7 @@ if __name__ == "__main__":
     BOARD_ROWS = 5
     BOARD_COLS = 3
     env = HexagonEnv(BOARD_ROWS, BOARD_COLS)
-    env.state = [3,0]
-    # env.step('down_right')
+    env.state = [3, 0]
     env.step('up_right')
-    #print(env.give_reward())
     print(env.state)
 

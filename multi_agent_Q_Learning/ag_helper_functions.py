@@ -1,3 +1,5 @@
+from multi_agent_Q_Learning.find_moves import find_moves_hexagons
+
 
 def single_index_to_tuple(index, cols):
     """
@@ -14,6 +16,15 @@ def single_index_to_tuple(index, cols):
 def tuple_to_single_index(tuple, cols):
     """
     Turns a tuple (i,j) pair of our hexagonal tesselation into a single index (from a graph).
+    :param tuple:
+    :return: single index
+    """
+    return tuple[0]*cols + tuple[1]
+
+
+def tuple_to_single_index_grid(tuple, cols):
+    """
+    Turns a tuple (i,j) pair of our GridWorld into a single index (from a graph).
     :param tuple:
     :return: single index
     """

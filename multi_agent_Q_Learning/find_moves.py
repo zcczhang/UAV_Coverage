@@ -1,5 +1,4 @@
 
-
 def find_moves_squares(state, BOARD_ROWS, BOARD_COLS):  # state is a tuple
     moves = {'up', 'down', 'left', 'right'}
     if state[0] == 0:
@@ -11,6 +10,7 @@ def find_moves_squares(state, BOARD_ROWS, BOARD_COLS):  # state is a tuple
     if state[1] == BOARD_COLS - 1:
         moves.remove('right')
     return list(moves)
+
 
 def find_moves_hexagons(state, BOARD_ROWS, BOARD_COLS):  # state is a tuple
     # with hexagons, BOARD_ROWS refers to the most amount of
@@ -35,7 +35,3 @@ def find_moves_hexagons(state, BOARD_ROWS, BOARD_COLS):  # state is a tuple
     if state[1] == BOARD_COLS - 2 and state[1] % 2 == 0:  # bottom of a shorter column
         moves.discard('down')
     return list(moves)
-
-if __name__ == "__main__":
-    print(find_moves_hexagons((2,1)))
-    #print(find_moves_hexagons((3, 2)))
