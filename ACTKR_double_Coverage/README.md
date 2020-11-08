@@ -3,6 +3,7 @@
 This program is for planing coverage path for a single or multiple drones on a discrete gridworld using Actor Critic using Kronecker-Factored Trust Region (ACKTR) in stable baselines in Python.
 
 ![2 Drones Coverage Path on 10x10 Field](pic/coverage_animation.gif)
+![2 Drones Coverage Path on 10x10 Field](pic/coverage_animation2.gif)
 
 *2 Drones Coverage Path Animation*
 
