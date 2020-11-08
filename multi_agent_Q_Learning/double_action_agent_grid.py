@@ -118,7 +118,7 @@ class DoubleGridAgent:
                             self.Q_values[combined_curr_position][action])
         self.Q_values[combined_curr_position][action] = round(self.Q_values[combined_curr_position][action]+delta, 4)
 
-    def train(self, rounds=2000):
+    def train(self, rounds=1000):
         print("Training...")
         steps = []
         rewards = []
@@ -186,7 +186,7 @@ def get_single_path(tup_path, cols):
 if __name__ == "__main__":
     rows = 5
     cols = 6
-    rounds = 2000
+    rounds = 1000
 
     agents = DoubleGridAgent(rows, cols)
     agents.reset_all()
