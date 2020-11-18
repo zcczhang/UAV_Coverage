@@ -6,11 +6,26 @@
 
 <center> <h4> 25 May - 31 July, 2020 </h4> </center>
 
+### Content
+- <a href="#abs">***Abstract***</a>
+- <a href="#intro">***Introduction***</a>
+- <a href="#2">***Implementation of Hexagonal Tessellation***</a>
+- <a href="#3">***Single Agent Area Coverage***</a>
+	- <a href="#3.1">*Overview*</a>
+	- <a href="#3.2">*NMDP Tabular Q Learning*</a>
+	- <a href="#3.3">*Graph Based MDP Q Learning*</a>
+- <a href="#4">***Dual Agent Area Coverage***</a>
+	- <a href="#4.1">*Overview*</a>
+	- <a href="#4.2">*Multi-AgentsQLearning*</a>
+	- <a href="#4.3">*Actor Critic using Kronecker-Factored Trust Region(ACKTR)*</a> 
+- <a href="#con">***Conclusion and Future Work***</a>
+- <a href="#ref">***References***</a>
 
+<a id="abs"></a>
 ## Abstract
 
-In this summer research, I work with professor Esra Kadioglu-Urtis, and students Aaron Gould, Elisabeth Landgren, and Fan Zhang at Macalester College. In this project, we first implement the hexagonal tessellation area coverage approach which Esra previously published. Secondly, we develop and implement Q learning reinforcement learning algorithms in a non-Markov Decision Process(NMDP) and Markov Decision Process(MDP) for the area coverage where, instead of mathematically generating a route, the drone itself will learn an efficient path to cover an entire given area and return back to its launch position. We successfully generate the shortest paths that cover a large regular or irregular field in terms of the limited drone’s battery life, and finally extend the problem to include multiple drones to considerably widen the coverage area, using the Q learning and Actor Critic using Kronecker-Factored Trust Region (ACKTR) deep reinforcement learning method, built in the Gym environment in Python or by graph. My code is available at https://github.com/zcczhang/UAV_Coverage.
-
+In this summer research, I work with professor Esra Kadioglu-Urtis, and students Aaron Gould, Elisabeth Landgren, and Fan Zhang at Macalester College. In this project, we first implement the hexagonal tessellation area coverage approach which Esra previously published. Secondly, we develop and implement Q learning reinforcement learning algorithms in a non-Markov Decision Process(NMDP) and Markov Decision Process(MDP) for the area coverage where, instead of mathematically generating a route, the drone itself will learn an efficient path to cover an entire given area and return back to its launch position. We successfully generate the shortest paths that cover a large regular or irregular field in terms of the limited drone’s battery life, and finally extend the problem to include multiple drones to considerably widen the coverage area, using the Q learning and Actor Critic using Kronecker-Factored Trust Region (ACKTR) deep reinforcement learning method, built in the Gym environment in Python or by graph. My code is available at [https://github.com/zcczhang/UAV_Coverage](https://github.com/zcczhang/UAV_Coverage).
+<a id="intro"></a>
 ## 1 Introduction
 
 The coverage path planning(CPP) for Unmanned Aerial Vehicles (a.k.a drones) are increasingly being used for many applications such as search/rescue, agriculture, package delivery, inspection, etc.[1][2][3]. Using UAVs for the coverage provides several benefits, and UAVs with a high degree of mobility needs to cooperatively work as a team to provide effective coverage in a relative large are, in consideration of the limited battery life for drones[4].
@@ -19,11 +34,11 @@ Many existed work have already addressed the coverage problem by both theoretica
 
 The main contribution of this work is to demonstrate approaches to the reinforcement learning algorithms, named Q-learning and d Actor Critic using Kronecker-Factored Trust Region (ACKTR) deep reinforcement learning, to perform the CPP of an regular or irregular environment with known obstacles, visiting only once each center of the FOV and returning(for single drone so far), resulting in an optimized path.
 
-
+<a id="2"></a>
 ## 2 Implementation of Hexagonal Tessellation
 
 
-Professor Esra Kadioglu shows that a coverage path can be obtained by using polygon tessellation of a given area, and hexagonal tessellation produces a shorter coverage path than a square tessellation, in the paper *UAV Coverage Using Hexagonal Tessellation*[6]. This paper provides the algorithm to generate the Hamiltonian circuit in a rectangular field, and I implemented this algorithm to get GPS way-points given diagonal coordinates of the field and the radius of the field of view(FOV) of the UAV(code). To improve the accuracy of the translation between longitude, latitude, and meter, I transform the coordinates to the radian first and calculate the distance showing below, with two diagonal points: (top, left), (bottom, right):
+Professor Esra Kadioglu shows that a coverage path can be obtained by using polygon tessellation of a given area, and hexagonal tessellation produces a shorter coverage path than a square tessellation, in the paper *UAV Coverage Using Hexagonal Tessellation*[6]. This paper provides the algorithm to generate the Hamiltonian circuit in a rectangular field, and I implemented this algorithm to get GPS way-points given diagonal coordinates of the field and the radius of the field of view(FOV) of the UAV[code](https://github.com/zcczhang/UAV_Coverage/tree/master/Get_Path). To improve the accuracy of the translation between longitude, latitude, and meter, I transform the coordinates to the radian first and calculate the distance showing below, with two diagonal points: (top, left), (bottom, right):
 
 <center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/eq1.png?raw=true" width=610" height="50"/></center>
 
@@ -34,8 +49,10 @@ Figures below show two circumstances of GPS way-points for drone covering a rect
 ![](https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/fig1.png?raw=true)
 <center> <h7> Figure 1: Two circumstances of GPS way-points for drone covering a rectangular field using hexagonal tessellation </h7> </center>
 
+<a id="3"></a>
 ## 3 Single Agent Area Coverage
 
+<a id="3.1"></a>
 ### 3.1 Overview
 
 In comparison with the hexagon tessellation which is calculated and proved mathematically that generates the shorter coverage path than the square tessellation, we want to figure out if it is possible to implement the reinforcement learning to find the shortest coverage path in a given field. To begin with, the environment is set to be the rectangular grid world, and the start point is the same with the end point. Specifically, the graph below gives a simple example of the rectangular 4x5 grid world where the agent starts at the (0, 0) at the upper left corner. And the drone will ideally pass through every center of the FOV, and take photos or make some other actions along with the coverage each step. Then our problem becomes to implement the reinforcement learning looking for the shortest path where the drone visits all grids(squares) and returns back to the launch position in the environment grid world.
@@ -53,6 +70,7 @@ where r is a relatively large constant reward and fi : {S} → {0,1} shows wheth
 
 where S and S′ are the current and next (potential) states respectively; R is the reward based on the current state s and action a; α is the learning rate; and γ is the discount factor[8]. In our research, the state is set to be the waypoint of the environment—the gridworld in this section.
 
+<a id="3.2"></a>
 ### 3.2 NMDP Tabular Q Learning
 
 Since in each step in each episode, the agent has to observe if the current state is visited or not in order to get the reward, instead of only observing the current state, the process is the non-Markov Decision Process(NMDP). In order to let the agent ”learn” faster, I assume that they will visit the unvisited grid first. I also implement the decaying epsilon-greedy method to maximize the numerical reward for the action policy π(s) for each state s, shown below,
@@ -65,7 +83,7 @@ where ε decreases over time proportionally. Since the agent has to finish two t
 
 where S and S′ are the current and next states respectively; R is the reward based on the action a referring to S, which is dependant on whether the agent visit unvisited states, and finish the coverage task as well as flying back; α is the learning rate; and γ is the discount factor.
 
-During the training, 4 values corresponding with four available directions up, down, right, and left at each entry of the ROWS×COLS table of Q values will be updated. The policy for the greedy method will choose the direction with the largest value at each state in the gridworld. After training, optimal path could be derived by choosing the direction with the largest Q value among all directions each state from the Q table. Since the movements at the beginning are random, and there are more than one ”optimal paths” which go through all grids exactly once and get back to the origin, we could get different Q tables and paths after training(code). Then, two different results of coverage path in a simple 4×5 gridworld are illustrated in figure 3 and figure 4. The table of directions corresponding with the largest Q values in the Q table is shown at the left, while the derived coverage path is shown at the right by dotted arrows. In conclusion, the minimum steps which is equivalent to the shortest coverage distance is supposed to be 20 steps in 4 × 5 gridworld, which is consistent with results derived by this reinforcement learning algorithm shown below.
+During the training, 4 values corresponding with four available directions up, down, right, and left at each entry of the ROWS×COLS table of Q values will be updated. The policy for the greedy method will choose the direction with the largest value at each state in the gridworld. After training, optimal path could be derived by choosing the direction with the largest Q value among all directions each state from the Q table. Since the movements at the beginning are random, and there are more than one ”optimal paths” which go through all grids exactly once and get back to the origin, we could get different Q tables and paths after training[code](https://github.com/zcczhang/UAV_Coverage/blob/master/Grid%20World/Past_All_Grids_v2.0.1.ipynb). Then, two different results of coverage path in a simple 4×5 gridworld are illustrated in figure 3 and figure 4. The table of directions corresponding with the largest Q values in the Q table is shown at the left, while the derived coverage path is shown at the right by dotted arrows. In conclusion, the minimum steps which is equivalent to the shortest coverage distance is supposed to be 20 steps in 4 × 5 gridworld, which is consistent with results derived by this reinforcement learning algorithm shown below.
 
 <center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/5.png?raw=true" width=390" height="160"/></center>
 <center> <h7> Figure 3: The first coverage path generated by NMDP tabular Q learning in 4x5 gridworld </h7> </center>
@@ -80,6 +98,7 @@ The convergence means that the policy for shortest coverage path planning from Q
 
 This naive tabular Q learning could also be implemented in the hexagon tessellation environment by allowing six directions up, upper left, upper right, down, bottom left, and bottom right. Then, it requires a larger dimension of action space and Q table, and many out-of-bound directions need to be considered. Besides, as the size of the gridworld becomes large, it is unstable to find the coverage solution. Therefore, in the next section, a graph based algorithm will be introduced to reduce the computation and be available for more complicated environment like irregular field with obstacles.
 
+<a id="3.3"></a>
 ### 3.3 Graph Based MDP Q Learning
 
 In this section, I set the environment as a graph, where the vertices are the state that need to be covered and edges are available directions that the agent drone can fly through. Then, using adjacency matrices, only attainable vertices will have corresponding values for Q values, rewards, and actions. In this way, more complicated real world environment beyond the gridworld can be transformed to the graph to implement reinforcement learning[10]. Assume the environment has V vertices, then R and Q are V × V matrices. Specifically, R is an adjacency matrix except R[i,j] where j is the end(start) state and i,j are connected. In this way, each step of exploration will get a small reward except reaching the end state with a much larger reward. Unlike the NMDP naive Q learning in the previous section, the agent will first find shortest paths from any state in the environment to the launch position, and then store the Q values in Q matrix. This process is MDP, and is straightforward to implement the Q learning. As actions for the agent in this MDP are fully random without greedy move, the simple bellman equation is better to use to update Q values recursively[11].
@@ -89,7 +108,7 @@ In this section, I set the environment as a graph, where the vertices are the st
 To get the solution for coverage path planning, I consider that if the agent is supposed to to cover all grids, or in other words visit more states, it is equivalent to avoid the shortest path and minimize the overlapping states, by choosing the minimum Q value for the policy. The algorithm of this Q learning with graph-based state representation is shown below,
 
 <center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Pictures/Learning%20with%20Graph-Based%20State%20Representations.png?raw=true" width=600" height="460"/></center>
-where R[S,a] is the reward based on the action a referring to S. As this algorithm only considers the accessible directions for connected vertices reflected by 1 in the adjacency matrix, and only Q[i,j]s with connected i,j are updated, the computation for updating Q values reduces significantly so that more accurate solutions in larger environment can be realized. For example, 20 × 20 gridworld is transformed as the graph where the indices of vertices are from 1 to 400, shown at the left of figure 7, and the optimal coverage path is generated by this algorithm after training only 500 episodes is visualized at the right(code).
+where R[S,a] is the reward based on the action a referring to S. As this algorithm only considers the accessible directions for connected vertices reflected by 1 in the adjacency matrix, and only Q[i,j]s with connected i,j are updated, the computation for updating Q values reduces significantly so that more accurate solutions in larger environment can be realized. For example, 20 × 20 gridworld is transformed as the graph where the indices of vertices are from 1 to 400, shown at the left of figure 7, and the optimal coverage path is generated by this algorithm after training only 500 episodes is visualized at the right(https://github.com/zcczhang/UAV_Coverage/tree/master/Graph_Based_Coverage).
 
 <center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/8.png?raw=true" width=375" height="160"/></center>
 <center> <h7> Figure 7: 20x20 graph of gridworld and the solution for its coverage path planning </h7> </center>
@@ -108,9 +127,11 @@ In figure 9, the irregular field environment is tested. The light blue area at t
 
 Therefore, our graph-based state Q learning for area coverage could provide the coverage for a larger size of a regular or irregular field for a single UAV than the algorithm in the Section 3.2. However, this algorithm is not to directly find the optimal shortest distance for the area coverage, we could not observe whether the agent will successfully find the solution straightforward during or after the training, and this algorithm will be hard to extend to the multi-agents coverage.
 
-## Dual Agents Area Coverage
+<a id="4"></a>
+## 4 Dual Agents Area Coverage
 
-### Overview
+<a id="4.1"></a>
+### 4.1 Overview
 
 Normally, the battery for the single UAV could not guarantee the area coverage in a large field, so we try to find out solutions for multi-drones cooperatively providing the coverage by reinforcement learning. In this research, we focus more on the double agent area coverage. Similar with the environment for the single agent, we first build our environment in the gridworld, while the first agent will be launched at the 0, 0 at the upper left corner in the board, and another agent will be launched at (ROW S − 1, COLS − 1) at the bottom right corner in the board, illustrating in figure 10.
 
@@ -123,6 +144,7 @@ In comparison with the environment for the single agent, we consider two coordin
 
 where fi, gi : {S} → {0, 1} shows whether two grids for each state are visited by drones f and g, where 0 for unvisited while1forvisited;andr=2·R·C−(|i0 −i′0|+|j0 −j0′|+|i1 −i1′|+|j1 −j1′|)forstatesst =((i0,j0),(i1,j1))and st+1 = ((i0′ , j0′), (i1′, j1′)) after *at*. Then, we still train our model by using the tabular Q learning applying the bellman equation and temporal difference method to update Q(S, A) corresponding with the state s and action a after each step with the Eq.3.
 
+<a id="4.2"></a>
 ### 4.2 Multi-Agents Q Learning
 
 If we do not consider the complex dimension of the state space, action space, and Q table, our method could be generalized as the tabular Q learning for n drones area coverage, where we could use n = 2 for our double drones area coverage. Since all exactly same drones will take actions simultaneously, we consider this multiple drones system as one agent, and then implement the tabular Q learning similar with the single agent tabular Q learning and with same denotations, shown below[12].
@@ -130,7 +152,7 @@ If we do not consider the complex dimension of the state space, action space, an
 <center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/al3.png?raw=true" width=580" height="350"/></center>
 
 
-We then conduct our experiment for the dual drones coverage in the 5 × 6 gridworld by initializing n = 2 in the algorithm(code). Figure 11 and figure 12 shows two successful convergences of steps each episode for this algorithm in the 5 × 6 gridworld. In this case, each step is moving from a center of a grid to another center of a grid, and the convergence means that the agent of two drones finish providing the coverage in a stable steps for all 30 grids and the Q table will not be updated. From figures below, we could see that the agent could find a relatively small steps after training and our agents are indeed learning.
+We then conduct our experiment for the dual drones coverage in the 5 × 6 gridworld by initializing n = 2 in the algorithm[code](https://github.com/zcczhang/UAV_Coverage/tree/master/multi_agent_Q_Learning). Figure 11 and figure 12 shows two successful convergences of steps each episode for this algorithm in the 5 × 6 gridworld. In this case, each step is moving from a center of a grid to another center of a grid, and the convergence means that the agent of two drones finish providing the coverage in a stable steps for all 30 grids and the Q table will not be updated. From figures below, we could see that the agent could find a relatively small steps after training and our agents are indeed learning.
 
 <center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/fig11&12.png?raw=true.png?raw=true" width=660" height="260"/></center>
 
@@ -141,6 +163,7 @@ However, the number of steps that our tabular Q learning generated for two drone
 
 Similar with the singe agent area coverage, dual UAVs area coverage generated by our reinforcement learning method will also have different solutions for different training due to policies, and therefore end states and the number of grids that are visited for both drones are always different for our double drones tabular Q learning method. As our reinforcement learning algorithm will only find the relatively short distance but not the optimal shortest distance for the coverage, and the computation for our learning will be extremely large while increasing the size of the environment, we try to find the deep reinforcement learning(DRL) method to reach our goal for the double drones area coverage.
 
+<a id="4.3"></a>
 ### 4.3 Actor Critic using Kronecker-Factored Trust Region(ACKTR)
 
 
@@ -173,7 +196,7 @@ the natural gradient:
 
 <center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/eq12.png?raw=true" width=200" height="75"/></center>
 
-where ηmax is the learning rate and δ is the trust region radius. ACKTR is the first scalable trust region natural gradient method for actor-critic DRL, and improves the sample efficiency of current methods significantly[13]. We will use this method to train our agents for the double agents coverage in the gridworld. We conduct our experiment for double UAVs coverage in a 10 × 10 gridworld, where the start positions for drones are the upper left and bottom right of the board respectively, and the end points are undecided to make sure that the training process is MDP. We successfully find solutions for double agents area coverage using ACKTR(code). Figure 14 shows two solutions for the coverage path planning after training 200,000 time-steps, using ACKTR implemented in the Stable Baselines in Python(simulation code).
+where ηmax is the learning rate and δ is the trust region radius. ACKTR is the first scalable trust region natural gradient method for actor-critic DRL, and improves the sample efficiency of current methods significantly[13]. We will use this method to train our agents for the double agents coverage in the gridworld. We conduct our experiment for double UAVs coverage in a 10 × 10 gridworld, where the start positions for drones are the upper left and bottom right of the board respectively, and the end points are undecided to make sure that the training process is MDP. We successfully find solutions for double agents area coverage using ACKTR[code](https://github.com/zcczhang/UAV_Coverage/tree/master/ACTKR_double_Coverage). Figure 14 shows two solutions for the coverage path planning after training 200,000 time-steps, using ACKTR implemented in the Stable Baselines in Python[simulation code](https://github.com/zcczhang/UAV_Coverage/tree/master/Simulation).
 
 <center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/12.png?raw=true" width=800" height="335"/></center>
 <center> <h7> Figure 10: The example of simple 4x5 gridworld starting at (0,0) and (3,4) for two drones</h7> </center>
@@ -182,15 +205,17 @@ Figure 15 and 16 below represent the learning curve indicating the rewards the a
 
 <center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/fig15&16.png?raw=true" width=660" height="260"/></center>
 
-
+<a id="con"></a>
 ## Conclusion and Future Work
 
 In this summer research, we designed and implement efficient NMDP and MDP tabular Q learning for single drone coverage in a given regular or irregular environment, built in Gym or by graph; and ACKTR deep reinforcement learning for the double agents cooperatively learning to provide full coverage in the gridworld by Stable Baselines. The experimental results show that our reinforcement learning agents successfully learn to complete the coverage for both single and double agents, and come back to the launch position for the single agent. In the future, we are interested in using more Deep Learning methods to increase the size of the environment that can be covered with a more stable convergence, and extend it to the multi-agent systems. And we will consider energy, resolution, e.t.c. constraints in the UAV coverage in solving real life problem, such as wildfire monitoring, search and rescue missions, and so forth. It is also worth considering to apply our reinforcement learning based methods for the similar problems like Hamiltonian circuit or travelling salesman problem(TSP).
 
+<a id="ack"></a>
 ## Acknowledgement
 
 This research project is funded by MacKnight-Haan-Ludwig Summer Research Collaboration Fund, Class of 1950 Summer Research Collaboration Fund, Anderson-Grossheusch Summer Research Collaboration Fund, and Mac/Faculty Collaboration Summer Research Funds. The author would like to appreciate the insightful discussion and work with Macalester College professor Esra Kadioglu-Urtis, and students Aaron Gould, Elisabeth Landgren, and Fan Zhang.
 
+<a id="ref"></a>
 ## Reference
 
 [1] E. Semsch, M. Jakob, D. P. ıcek, and M. Pechoucek, “Autonomous uav surveillance in complex urban environ- ments,” Proceedings of the 2009 IEEE/WIC/ACM International Conference on Intelligent Agent Technology, IAT 2009, Milan, Italy, 15-18, 2009.
