@@ -76,7 +76,7 @@ During the training, 4 values corresponding with four available directions up, d
 
 The convergence means that the policy for shortest coverage path planning from Q values will not be changed, and the steps equal to the shortest distance for visiting all states and return back, which is the number of grids in the gridworld. From figure 5 and figure 6 represented the number of steps each episode, steps will converge around 350 episodes in the 4 × 5 gridworld. Using the decaying epsilon-greedy method can make sure that the agent will converge to only one optimal path for each training, and this is also the reason why multiple different results would be generated for each training. The steps vibrate a lot at the beginning and after the convergence, since a random state in the environment will be chosen to be the start state each episode. This random start state will make sure the agent looking for an optimal direction at any state for visiting all cells and getting back. The number of steps is increasing at first because the agent is sticking to a path that cover some but not all grids and the agent has less and less probabilities due to the decaying ε-greedy policy to be broken away from the current local optimum, but the number of cells for these repeatedly visited loops is actually increasing while training. And once the visited grids for the loop that the agent is sticking on each episode equal to the number of all grids in the grid world, the step will converge “suddenly” to the optimal steps, the number of grids in the gridworld, showing as the steep decrease just before the convergence around 200 to 300 episodes in this case.
 
-![](https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/fg5&6.png?raw=true)
+<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/fg5&6.png?raw=true.png?raw=true" width=660" height="260"/></center>
 
 This naive tabular Q learning could also be implemented in the hexagon tessellation environment by allowing six directions up, upper left, upper right, down, bottom left, and bottom right. Then, it requires a larger dimension of action space and Q table, and many out-of-bound directions need to be considered. Besides, as the size of the gridworld becomes large, it is unstable to find the coverage solution. Therefore, in the next section, a graph based algorithm will be introduced to reduce the computation and be available for more complicated environment like irregular field with obstacles.
 
@@ -103,7 +103,7 @@ In comparison with Algorithm 1, this algorithm is much more efficient to be impl
 
 In figure 9, the irregular field environment is tested. The light blue area at the left is the area that the drone need to cover, and shadow blocks are obstacles that the drone does not need to cover. Then the square tessellation where the center of each FOV of the drone is the position that the drone will pass and take photos or make actions along with the coverage, and the optimal Hamiltonian circuit path is shown at the right.
 
-<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/10.png?raw=true" width=550" height="200"/></center>
+<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/10.png?raw=true" width=650" height="250"/></center>
 <center> <h7> Figure 9: Solution of coverage path in an irregular field environment </h7> </center>
 
 Therefore, our graph-based state Q learning for area coverage could provide the coverage for a larger size of a regular or irregular field for a single UAV than the algorithm in the Section 3.2. However, this algorithm is not to directly find the optimal shortest distance for the area coverage, we could not observe whether the agent will successfully find the solution straightforward during or after the training, and this algorithm will be hard to extend to the multi-agents coverage.
@@ -132,11 +132,11 @@ If we do not consider the complex dimension of the state space, action space, an
 
 We then conduct our experiment for the dual drones coverage in the 5 × 6 gridworld by initializing n = 2 in the algorithm(code). Figure 11 and figure 12 shows two successful convergences of steps each episode for this algorithm in the 5 × 6 gridworld. In this case, each step is moving from a center of a grid to another center of a grid, and the convergence means that the agent of two drones finish providing the coverage in a stable steps for all 30 grids and the Q table will not be updated. From figures below, we could see that the agent could find a relatively small steps after training and our agents are indeed learning.
 
-![](https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/fig11&12.png?raw=true)
+<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/fig11&12.png?raw=true.png?raw=true" width=660" height="260"/></center>
 
 However, the number of steps that our tabular Q learning generated for two drones are larger than 30 steps, the ideal minimum steps of the coverage. This means that due to the less consideration of the competitive of two drones, two drones will not visit the grids that they have already visited respectively but will repeat visiting some grids that have already been visited by another drone, showing in the figure 13, where red colored grids are grids that are visited by both agents.
 
-<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/17.png?raw=true" width=520" height="170"/></center>
+<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/17.png?raw=true" width=600" height="200"/></center>
 <center> <h7> Figure 10: The example of simple 4x5 gridworld starting at (0,0) and (3,4) for two drones</h7> </center>
 
 Similar with the singe agent area coverage, dual UAVs area coverage generated by our reinforcement learning method will also have different solutions for different training due to policies, and therefore end states and the number of grids that are visited for both drones are always different for our double drones tabular Q learning method. As our reinforcement learning algorithm will only find the relatively short distance but not the optimal shortest distance for the coverage, and the computation for our learning will be extremely large while increasing the size of the environment, we try to find the deep reinforcement learning(DRL) method to reach our goal for the double drones area coverage.
@@ -175,12 +175,12 @@ the natural gradient:
 
 where ηmax is the learning rate and δ is the trust region radius. ACKTR is the first scalable trust region natural gradient method for actor-critic DRL, and improves the sample efficiency of current methods significantly[13]. We will use this method to train our agents for the double agents coverage in the gridworld. We conduct our experiment for double UAVs coverage in a 10 × 10 gridworld, where the start positions for drones are the upper left and bottom right of the board respectively, and the end points are undecided to make sure that the training process is MDP. We successfully find solutions for double agents area coverage using ACKTR(code). Figure 14 shows two solutions for the coverage path planning after training 200,000 time-steps, using ACKTR implemented in the Stable Baselines in Python(simulation code).
 
-<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/12.png?raw=true" width=600" height="235"/></center>
+<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/12.png?raw=true" width=800" height="335"/></center>
 <center> <h7> Figure 10: The example of simple 4x5 gridworld starting at (0,0) and (3,4) for two drones</h7> </center>
 
 Figure 15 and 16 below represent the learning curve indicating the rewards the agent received each episode. The rewards received each episode are increasing overall and become stable around 70 after 150,000 time-steps. The reward feeding are typically follows Eq.6, and figure 15 and 16 illustrate how ACKTR method maximize the rewards by updating parameters of layers each time-step while training. Two figures below are learning curves indicating rewards for solutions illustrated in figure 14. The rewards are showing increasing overall and becoming stable after around 150,000 time-steps. Therefore, we could conclude that it is realizable to use ACKTR deep reinforcement learning method to complete the area coverage path planning for two agents.
 
-<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/fig15&16.png?raw=true" width=630" height="250"/></center>
+<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/fig15&16.png?raw=true" width=660" height="260"/></center>
 
 
 ## Conclusion and Future Work
