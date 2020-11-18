@@ -1,5 +1,7 @@
 # Area Coverage with Unmanned Aerial Vehicles Using Reinforcement Learning
 
+Latest update date: Nov. 18, 2020
+
 2020 **Summer Research** with professor Esra Kadioglu Urtis, and students Aaron Gould, Elisabeth Landgren, and Fan Zhang at Macalester College. We first implemented the area coverage approach on unmanned aerial vehicles(UAVs). We also developed and implemented reinforcement learning based algorithms with simulations and a gym environment for coverage path planning for multiple drones using Actor Critic using Kronecker-Factored Trust Region ***(ACKTR) deep reinforcement learning*** method provided by Stable Baselines(OpenAI) in Python.[My Reseaerch Report](https://zcczhang.github.io/files/Research_Report.pdf), [My Github Repository](https://github.com/zcczhang/UAV_Coverage).
 
 Project funded by: MacKnight-Haan-Ludwig Summer Research Collaboration Fund, Class of 1950 Summer Research Collaboration Fund,
@@ -10,9 +12,9 @@ Anderson-Grossheusch Summer Research Collaboration Fund, Mac/Faculty Collaborati
 [PDF Version](https://zcczhang.github.io/files/Research_Report.pdf) (recommanded for format)
 
 #### Glance at our Poster: [Link](https://github.com/zcczhang/UAV_Coverage/blob/master/UAV%20Summer%20Research%20Poster%202020.pdf)
-#### Glance at my presentation(prepared for an interview): [LINK](https://docs.google.com/presentation/d/1c5O4AdvdayNQrn9QppQWCvnQDMCDF5lfyIztgM2HMwM/edit?usp=sharing)
+#### Glance at my presentation(prepared for an interview): [Link](https://docs.google.com/presentation/d/1c5O4AdvdayNQrn9QppQWCvnQDMCDF5lfyIztgM2HMwM/edit?usp=sharing)
 
-#### Research Report(md version):
+#### Research Report(md version, for better md reading experience, visit: [Link](https://zcczhang.github.io/projects/uav))
 
 <center> <h1> Area Coverage with Unmanned Aerial Vehicles Using Reinforcement Learning</h1> </center>
 
