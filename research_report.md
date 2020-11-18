@@ -9,13 +9,13 @@
 
 ## Abstract
 
-In this summer research, I work with professor Esra Kadioglu-Urtis, and students Aaron Gould, Elisabeth Land- gren, and Fan Zhang at Macalester College. In this project, we first implement the hexagonal tessellation area coverage approach which Esra previously published. Secondly, we develop and implement Q learning reinforce- ment learning algorithms in a non-Markov Decision Process(NMDP) and Markov Decision Process(MDP) for the area coverage where, instead of mathematically generating a route, the drone itself will learn an efficient path to cover an entire given area and return back to its launch position. We successfully generate the shortest paths that cover a large regular or irregular field in terms of the limited drone’s battery life, and finally extend the problem to include multiple drones to considerably widen the coverage area, using the Q learning and Actor Critic using Kronecker-Factored Trust Region (ACKTR) deep reinforcement learning method, built in the Gym environment in Python or by graph. My code is available at https://github.com/zcczhang/UAV_Coverage.
+In this summer research, I work with professor Esra Kadioglu-Urtis, and students Aaron Gould, Elisabeth Landgren, and Fan Zhang at Macalester College. In this project, we first implement the hexagonal tessellation area coverage approach which Esra previously published. Secondly, we develop and implement Q learning reinforcement learning algorithms in a non-Markov Decision Process(NMDP) and Markov Decision Process(MDP) for the area coverage where, instead of mathematically generating a route, the drone itself will learn an efficient path to cover an entire given area and return back to its launch position. We successfully generate the shortest paths that cover a large regular or irregular field in terms of the limited drone’s battery life, and finally extend the problem to include multiple drones to considerably widen the coverage area, using the Q learning and Actor Critic using Kronecker-Factored Trust Region (ACKTR) deep reinforcement learning method, built in the Gym environment in Python or by graph. My code is available at https://github.com/zcczhang/UAV_Coverage.
 
 ## 1 Introduction
 
 The coverage path planning(CPP) for Unmanned Aerial Vehicles (a.k.a drones) are increasingly being used for many applications such as search/rescue, agriculture, package delivery, inspection, etc.[1][2][3]. Using UAVs for the coverage provides several benefits, and UAVs with a high degree of mobility needs to cooperatively work as a team to provide effective coverage in a relative large are, in consideration of the limited battery life for drones[4].
 
-Many existed work have already addressed the coverage problem by both theoretically methods or learning- based algorithms[5][6][7]. However, drones in those methods are either static for coverage in terms of drones’ field of view(FOV), or only complete one-way coverage paths where the cost for the drones’ recovery is not under the consideration. Therefore, in this work, we not only consider how to generate the shortest coverage paths, but also include letting the UAV return back to the launch position, which will be addressed in this work using reinforcement learning algorithms illustrated in detail in the overview sections in this report.
+Many existed work have already addressed the coverage problem by both theoretically methods or learning-based algorithms[5][6][7]. However, drones in those methods are either static for coverage in terms of drones’ field of view(FOV), or only complete one-way coverage paths where the cost for the drones’ recovery is not under the consideration. Therefore, in this work, we not only consider how to generate the shortest coverage paths, but also include letting the UAV return back to the launch position, which will be addressed in this work using reinforcement learning algorithms illustrated in detail in the overview sections in this report.
 
 The main contribution of this work is to demonstrate approaches to the reinforcement learning algorithms, named Q-learning and d Actor Critic using Kronecker-Factored Trust Region (ACKTR) deep reinforcement learning, to perform the CPP of an regular or irregular environment with known obstacles, visiting only once each center of the FOV and returning(for single drone so far), resulting in an optimized path.
 
@@ -180,8 +180,8 @@ where ηmax is the learning rate and δ is the trust region radius. ACKTR is the
 
 Figure 15 and 16 below represent the learning curve indicating the rewards the agent received each episode. The rewards received each episode are increasing overall and become stable around 70 after 150,000 time-steps. The reward feeding are typically follows Eq.6, and figure 15 and 16 illustrate how ACKTR method maximize the rewards by updating parameters of layers each time-step while training. Two figures below are learning curves indicating rewards for solutions illustrated in figure 14. The rewards are showing increasing overall and becoming stable after around 150,000 time-steps. Therefore, we could conclude that it is realizable to use ACKTR deep reinforcement learning method to complete the area coverage path planning for two agents.
 
-<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/fig15&16.png?raw=true" width=600" height="400"/></center>
-<center> <h7> Figure 10: The example of simple 4x5 gridworld starting at (0,0) and (3,4) for two drones</h7> </center>
+<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/fig15&16.png?raw=true" width=630" height="250"/></center>
+
 
 ## Conclusion and Future Work
 
@@ -189,7 +189,38 @@ In this summer research, we designed and implement efficient NMDP and MDP tabula
 
 ## Acknowledgement
 
-This research project is funded by MacKnight-Haan-Ludwig Summer Research Collaboration Fund, Class of 1950 Summer Research Collaboration Fund, Anderson-Grossheusch Summer Research Collaboration Fund, and Mac/Fac- ulty Collaboration Summer Research Funds. The author would like to appreciate the insightful discussion and work with Macalester College professor Esra Kadioglu-Urtis, and students Aaron Gould, Elisabeth Landgren, and Fan Zhang.
+This research project is funded by MacKnight-Haan-Ludwig Summer Research Collaboration Fund, Class of 1950 Summer Research Collaboration Fund, Anderson-Grossheusch Summer Research Collaboration Fund, and Mac/Faculty Collaboration Summer Research Funds. The author would like to appreciate the insightful discussion and work with Macalester College professor Esra Kadioglu-Urtis, and students Aaron Gould, Elisabeth Landgren, and Fan Zhang.
+
+## Reference
+
+[1] E. Semsch, M. Jakob, D. P. ıcek, and M. Pechoucek, “Autonomous uav surveillance in complex urban environ- ments,” Proceedings of the 2009 IEEE/WIC/ACM International Conference on Intelligent Agent Technology, IAT 2009, Milan, Italy, 15-18, 2009.
+
+[2] M. Silvagni, A. Tonoli, E. Zenerino, and M. Chiaberg, “Multipurpose uav for search and rescue operations in mountain avalanche events,” Geomatics, Natural Hazards and Risk, pp. 1–16, 2016.
+
+[3] T. Oksanen and A. Visala, “Coverage path planning algorithms for agricultural field machines,” J. Field Robotics, vol. 26, pp. 651–668, 2009.
+
+[4] Liu, C. Harold, Z. Chen, J. Tang, J. Xu, and C. Piao., “Energy-efficient uav control for effective and fair communication coverage: A deep reinforcement learning approach,” IEEE Journal on Selected Areas in Com- munications 36, no. 9, 2018.
+
+[5] T. M. Cabreira, L. B. Brisolara, and P. R. F. Jr, “Esurvey on coverage path planning with unmanned aerial vehicles,” Drones, 3(1), 4., 2019.
+
+[6] E. Kadioglu, C. Urtis, and N. Papanikolopoulos, “UAV Coverage Using Hexagonal Tessellation,” 2019 27th Mediterranean Conference on Control and Automation (MED), IEEE, 2019.
+
+[7] Panov, A. I., K. S. Yakovlev, and R. Suvorov, “Grid path planning with deep reinforcement learning: Preliminary results,” Procedia computer science 123, 2018.
+
+[8] Lapan and Maxim, Deep Q-Networks. Deep Reinforcement Learning Hands-On: Apply modern RL methods, with deep Q-networks, value iteration, policy gradients, TRPO, AlphaGo Zero and more. Chapter 6. Page 130. Packt Publishing Ltd, 2018.
+
+[9] R. S. Sutton and A. G. Barto, Reinforcement learning: An introduction. MIT press, 2018.
+
+[10] Piardi, Luis, J. Lima, A. I. Pereira, and P. Costa, “Coverage path planning optimization based on q-learning
+algorithm,” AIP Conference Proceedings. Vol. 2116. No. 1. AIP Publishing LLC, 2019.
+
+[11] Lapan and Maxim, Tabular Learning and the Bellman Equation. Deep Reinforcement Learning Hands-On: Apply modern RL methods, with deep Q-networks, value iteration, policy gradients, TRPO, AlphaGo Zero and more. Chapter 5. Page 113. Packt Publishing Ltd, 2018.
+
+[12] PGreenwald, Amy, K. Hall, and R. Serrano, “Correlated q-learning,” ICML. Vol. 20. No. 1, 2003.
+
+[13] Y. Wu, E. Mansimov, R. B. Grosse, S. Liao, and J. Ba, “Scalable trust-region method for deep reinforcement learning using kronecker-factored approximation,” In Advances in neural information processing systems, pp. 5279-5288, 2017.
+
+[14] Mnih, Volodymyr, A. P. Badia, M. Mirza, A. Graves, T. Lillicrap, T. Harley, D. Silver, and K. Kavukcuoglu, “Asynchronous methods for deep reinforcement learning.,” International conference on machine learning. pp. 1928-1937, 2016.
 
 
 
