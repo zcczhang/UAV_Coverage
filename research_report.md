@@ -24,3 +24,12 @@ The main contribution of this work is to demonstrate approaches to the reinforce
 
 Professor Esra Kadioglu shows that a coverage path can be obtained by using polygon tessellation of a given area, and hexagonal tessellation produces a shorter coverage path than a square tessellation, in the paper *UAV Coverage Using Hexagonal Tessellation*[6]. This paper provides the algorithm to generate the Hamiltonian circuit in a rectangular field, and I implemented this algorithm to get GPS way-points given diagonal coordinates of the field and the radius of the field of view(FOV) of the UAV(code). To improve the accuracy of the translation between longitude, latitude, and meter, I transform the coordinates to the radian first and calculate the distance showing below, with two diagonal points: (top, left), (bottom, right):
 
+![](https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/eq1.png?raw=true)
+
+so that: longitude per meter = (right - left) / width, and latitude per meter = (top-bottom)/height.
+
+Figures below show two circumstances of GPS way-points for drone covering a rectangular field using hexagonal tessellation. The radius of the FOV in the left figure is 7m while 8m for the right one.
+
+![](https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/1.png?raw=true)
+
+
