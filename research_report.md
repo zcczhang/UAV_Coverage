@@ -148,7 +148,52 @@ As the multi-agents coverage, double agents shown in this work, requires very la
 
 To begin with, the policy gradient method parameterize the policy πθ(at | st) and update the parameter θ to maximize the objective(reward) function J(θ), defined by:
 
-<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/17.png?raw=true" width=520" height="170"/></center>
+<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/eq_7.png?raw=true" width=200" height="50"/></center>
+
+where Ψt is approximated as the advantage function Aπ for actor critic reinforcement learning methods, defined following the asynchronous advantage actor critic(A3C) as the k-step returns with function approximation[14],
+
+<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/eq8.png?raw=true" width=330" height="50"/></center>
+
+where θv are parameters of the value network, which provides an estimate of the expected sum of rewards from the given state with policy π [9].
+
+As A3C or other deep reinforcement learning methods are usually trained by inefficient first-order stochastic gradient descent methods, ACKTR implement the natural gradient decent. The following parameters updates follow the paper *Scalable trust-region method for deep reinforcement learning using Kronecker-factored approximation*[13]. In ACKTR, K-FAC uses a Kronecker-factored approximation to the Fisher matrix to perform efficient approximate natural gradient updates. The Fisher metric for reinforcement learning objectives defined by policy distribution for the actor is:
+
+<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/eq9.png?raw=true" width=280" height="35"/></center>
+
+where θ indicates weights of neural network for policy, multi-layer perceptron (MLP) network in our implementation in the Stable Baselines particularly, and p(τ) is the distribution of trajectories given by:
+
+<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/eq10.png?raw=true" width=240" height="50"/></center>
+
+As in ACKTR the output of the critic v is defined to be a Gaussian distribution as p(a, v | s) = π(a | s)p(v | s), and when actor and critic share lower-layer representations, ACKTR applies K-FAC to approximate the Fisher matrix to perform updates simultaneously.
+
+<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/eq11.png?raw=true" width=240" height="30"/></center>
+
+Then, ACKTR applies trust region formulation of K-FAC, with the following updates of effective step size η for
+the natural gradient:
+
+<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/eq12.png?raw=true" width=200" height="75"/></center>
+
+where ηmax is the learning rate and δ is the trust region radius. ACKTR is the first scalable trust region natural gradient method for actor-critic DRL, and improves the sample efficiency of current methods significantly[13]. We will use this method to train our agents for the double agents coverage in the gridworld. We conduct our experiment for double UAVs coverage in a 10 × 10 gridworld, where the start positions for drones are the upper left and bottom right of the board respectively, and the end points are undecided to make sure that the training process is MDP. We successfully find solutions for double agents area coverage using ACKTR(code). Figure 14 shows two solutions for the coverage path planning after training 200,000 time-steps, using ACKTR implemented in the Stable Baselines in Python(simulation code).
+
+<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/12.png?raw=true" width=600" height="235"/></center>
+<center> <h7> Figure 10: The example of simple 4x5 gridworld starting at (0,0) and (3,4) for two drones</h7> </center>
+
+Figure 15 and 16 below represent the learning curve indicating the rewards the agent received each episode. The rewards received each episode are increasing overall and become stable around 70 after 150,000 time-steps. The reward feeding are typically follows Eq.6, and figure 15 and 16 illustrate how ACKTR method maximize the rewards by updating parameters of layers each time-step while training. Two figures below are learning curves indicating rewards for solutions illustrated in figure 14. The rewards are showing increasing overall and becoming stable after around 150,000 time-steps. Therefore, we could conclude that it is realizable to use ACKTR deep reinforcement learning method to complete the area coverage path planning for two agents.
+
+<center><img src="https://github.com/zcczhang/UAV_Coverage/blob/master/Research_Report/fig15&16.png?raw=true" width=600" height="400"/></center>
+<center> <h7> Figure 10: The example of simple 4x5 gridworld starting at (0,0) and (3,4) for two drones</h7> </center>
+
+## Conclusion and Future Work
+
+In this summer research, we designed and implement efficient NMDP and MDP tabular Q learning for single drone coverage in a given regular or irregular environment, built in Gym or by graph; and ACKTR deep reinforcement learning for the double agents cooperatively learning to provide full coverage in the gridworld by Stable Baselines. The experimental results show that our reinforcement learning agents successfully learn to complete the coverage for both single and double agents, and come back to the launch position for the single agent. In the future, we are interested in using more Deep Learning methods to increase the size of the environment that can be covered with a more stable convergence, and extend it to the multi-agent systems. And we will consider energy, resolution, e.t.c. constraints in the UAV coverage in solving real life problem, such as wildfire monitoring, search and rescue missions, and so forth. It is also worth considering to apply our reinforcement learning based methods for the similar problems like Hamiltonian circuit or travelling salesman problem(TSP).
+
+## Acknowledgement
+
+This research project is funded by MacKnight-Haan-Ludwig Summer Research Collaboration Fund, Class of 1950 Summer Research Collaboration Fund, Anderson-Grossheusch Summer Research Collaboration Fund, and Mac/Fac- ulty Collaboration Summer Research Funds. The author would like to appreciate the insightful discussion and work with Macalester College professor Esra Kadioglu-Urtis, and students Aaron Gould, Elisabeth Landgren, and Fan Zhang.
+
+
+
+
 
 
 
